@@ -1,4 +1,4 @@
-package kh.semiPJ.jdbc.common.filter;
+package kh.project.jdbc.common.filter;
 
 import java.io.IOException;
 

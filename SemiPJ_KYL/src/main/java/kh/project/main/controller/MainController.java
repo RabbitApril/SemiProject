@@ -1,4 +1,4 @@
-package kh.semiPJ.member.controller;
+package kh.project.main.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MypageController
+ * Servlet implementation class MainController
  */
-@WebServlet("/MypageController")
-public class MypageController extends HttpServlet {
+@WebServlet("/main")
+public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MypageController() {
+    public MainController() {
         super();
         // TODO Auto-generated constructor stub
     }

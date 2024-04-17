@@ -1,4 +1,4 @@
-package kh.semiPJ.jdbc.common;
+package kh.project.jdbc.common;
 
 import java.io.FileReader;
 import java.sql.Connection;
