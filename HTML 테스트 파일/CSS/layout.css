@@ -1,0 +1,47 @@
+/*  */
+.wrap-header {
+    background-color: #C8BFE7;
+}
+
+.wrap-header > header{
+    /* 중앙 배치 */
+    width: 1080px; margin: 0 auto;
+}
+
+/*  */
+.wrap-footer {
+    /* float - 동위 - 해제 */
+    clear: both;
+}
+
+.wrap-footer > footer{
+    /* 중앙 배치 */
+    width: 1080px; margin: 0 auto;
+}
+
+/*  */
+.wrap-main {
+    /* 중앙 배치 */
+    width: 1080px; margin: 0 auto;
+
+    /* float - 부모 height를 위해  */
+    overflow: hidden;
+
+    /* background-color 빈공간 생김
+    margin: 10px 0;*/
+    /* background-color 칠해지는 공간 */
+    padding: 10px 0;
+    /* border: 1px solid black; */
+}
+
+.wrap-main > section{
+    /* float 왼쪽 배치 */
+    width: 870px; float: left;
+
+    margin-right: 10px;
+}
+
+.wrap-main > aside{
+    /* float 왼쪽 배치 */
+    width: 200px; float: left;
+}
