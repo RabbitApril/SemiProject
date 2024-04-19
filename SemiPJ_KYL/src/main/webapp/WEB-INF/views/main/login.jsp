@@ -42,10 +42,31 @@
 		}
 
 		function frmClickHandler() {
-			$.ajax({
-				
-			});
+			url:
+				, method : 
+				, data : $("#frm-login").serialize()
+				, success : function(result){
+					console.log(result);
+// 					if(result == 1) {
+// 						alert("반갑습니다.");
+// // 						var prePage = "${prePage}";
+// 						if(prePage == "write") {
+// 							location.href="${pageContext.request.contextPath }/board/write";
+// 						}
+// 						location.href="${pageContext.request.contextPath }/main";
+// 					} else {
+// 						alert("아이디 또는 패스워드가 일치하지 않습니다. 다시 확인하고 로그인해주세요.");
+// 						$("[name=pwd]").val("");
+// 					}
+				}
+				, error:function(request,status,error){
+					alert("code: "+request.status + "\n" + "message: " 
+							+ request.responseText + "\n"
+							+ "error: "+error);
+					}
+				});
 		}
 	</script>
+
 </body>
 </html>

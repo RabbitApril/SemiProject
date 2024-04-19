@@ -47,13 +47,42 @@
 
 		function btnCheckidClickHandler() {
 			$.ajax({
-
+			url:
+			, method : 
+			, data : 
+			, success : function(result) {
+				console.log(result);
+				if(result > 0) {
+					alert("이미 존재하는 아이디입니다.");
+				} else {
+					
+				}
+				, error:function(request,status,error){
+					alert("code: "+request.status + "\n" + "message: " 
+							+ request.responseText + "\n"
+							+ "error: "+error);
+					}
+			}
 			});
 		}
 
 		function btnCheckemailClickHandler() {
 			$.ajax({
-
+				url:
+					, method : 
+					, data : 
+					, success : function(result) {
+						console.log(result);
+						if(result > 0) {
+							alert("이미 존재하는 닉네임입니다.");
+						} else {
+							
+						}
+						, error:function(request,status,error){
+							alert("code: "+request.status + "\n" + "message: " 
+									+ request.responseText + "\n"
+									+ "error: "+error);
+							}
 			});
 		}
 	</script>
