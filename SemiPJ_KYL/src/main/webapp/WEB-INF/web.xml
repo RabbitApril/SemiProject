@@ -28,7 +28,7 @@
 
 	<filter>
 		<filter-name>encodingFilter</filter-name>
-		<filter-class>kh.mclass.common.filter.EncodingFilter</filter-class>
+		<filter-class>kh.project.jdbc.common.filter.EncodingFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
