@@ -11,7 +11,7 @@
 <body>
 	<div class="loginbox">
 		<div>
-			<img src="https://picsum.photos/200/300" alt="로그인 이미지">
+			<img src="../resource/img/로그인 이미지.png" alt="로그인 이미지">
 		</div>
 		<!-- ajax 방식 -->
 		<form id="frm-login">
