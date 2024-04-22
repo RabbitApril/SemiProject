@@ -31,7 +31,7 @@
 			<div>
 				<label>이메일</label> <input type="email" name="email">
 			</div>
-			<div>
+			<div class="btn join">
 				<button type="submit">회원가입</button>
 			</div>
 		</form>
@@ -42,22 +42,20 @@
 		function loadedHandler() {
 			//이벤트 등록
 			$(".btn.checkid").on("click", btnCheckidClickHandler);
-			$(".btn.checknickname").on("click", btnCheckemailClickHandler)
+			$(".btn.checknickname").on("click", btnCheckNicknameClickHandler);
 		}
 
 		function btnCheckidClickHandler() {
 			$.ajax({
-			url:
-			, method : 
-			, data : 
+			url: "${pageContext.request.contextPath}/checkId"
+			, method : "post"
+			, data : {cid : $("[name=id]").val(), k1:"v1", k2:"v2" }
 			, success : function(result) {
 				console.log(result);
 				if(result > 0) {
 					alert("이미 존재하는 아이디입니다.");
-				} else {
-					
-				}
-				, error:function(request,status,error){
+				} 
+			}, error:function(request,status,error){
 					alert("code: "+request.status + "\n" + "message: " 
 							+ request.responseText + "\n"
 							+ "error: "+error);
@@ -66,19 +64,17 @@
 			});
 		}
 
-		function btnCheckemailClickHandler() {
+		function btnCheckNicknameClickHandler() {
 			$.ajax({
-				url:
-					, method : 
-					, data : 
+				url: "${pageContext.request.contextPath}/checkNickname"
+					, method : "post"
+					, data : {cid : $("[name=nick]").val(), k1:"v1", k2:"v2" }
 					, success : function(result) {
 						console.log(result);
 						if(result > 0) {
 							alert("이미 존재하는 닉네임입니다.");
-						} else {
-							
 						}
-						, error:function(request,status,error){
+					}, error:function(request,status,error){
 							alert("code: "+request.status + "\n" + "message: " 
 									+ request.responseText + "\n"
 									+ "error: "+error);

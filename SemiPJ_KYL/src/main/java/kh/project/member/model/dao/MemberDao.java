@@ -91,16 +91,16 @@ public class MemberDao {
 	}
 	
 	
-	// select one check email 
-	public int selectCheckEmail(Connection conn, String memEmail) {
+	// select one check nickname
+	public int selectCheckNick(Connection conn, String memNick) {
 		int result = 0;
-		String sql = "SELECT COUNT (*) c FROM MEMBER WHERE MEM_EMAIL=?";
+		String sql = "SELECT COUNT (*) c FROM MEMBER WHERE MEM_NICK=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
 			// ? 처리 
-			pstmt.setString(1, memEmail);
+			pstmt.setString(1, memNick);
 			rs = pstmt.executeQuery();
 			// ResetSet 처리 
 			if(rs.next()) {

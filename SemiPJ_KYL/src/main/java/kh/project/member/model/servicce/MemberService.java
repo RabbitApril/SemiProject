@@ -45,10 +45,10 @@ public class MemberService {
 	
 	
 	// select checkEmail
-	public int selectCheckEmail(String memEmail) {
+	public int selectCheckNick(String memNick) {
 		int result = 0;
 		Connection conn = getSemiConnection(true);
-		result = dao.selectCheckId(conn, memEmail);
+		result = dao.selectCheckNick(conn, memNick);
 		close(conn);
 		return result;
 	}

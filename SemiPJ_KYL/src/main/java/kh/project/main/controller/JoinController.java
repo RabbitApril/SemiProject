@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.project.member.model.dto.MemberDto;
+import kh.project.member.model.servicce.MemberService;
+
 /**
  * Servlet implementation class JoinController
  */
@@ -33,8 +36,17 @@ public class JoinController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String memId = request.getParameter("id");
+		String memPwd = request.getParameter("pwd");
+		String memEmail = request.getParameter("email");
+		String memNick = request.getParameter("email");
+		MemberDto dto = new MemberDto(memId, memPwd, memEmail, memNick, null);
+		int result = new MemberService().insert(dto);
+		if(result < 0) {
+			// 회원가입 실패 시 
+			return;
+		}
+		response.sendRedirect(request.getContextPath()+"/login");
 	}
 
 }
