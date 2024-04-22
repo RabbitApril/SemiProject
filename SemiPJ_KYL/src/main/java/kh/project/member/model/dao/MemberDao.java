@@ -44,7 +44,7 @@ public class MemberDao {
 	// Login
 	public int login(Connection conn, MemberLoginDto dto) {
 		int result = 0;
-		String sql = "SELECT COUNT (*) c FROM MEMBER WHERE MEM_ID=? AND MEM_PWD=? AND MEM_GRADE=?";
+		String sql = "SELECT COUNT (*) c FROM MEMBER WHERE MEM_ID=? AND MEM_PWD=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
@@ -132,6 +132,7 @@ public class MemberDao {
 				result = new ArrayList<MemberDto>();
 				do {
 					MemberDto dto = new MemberDto(rs.getString("MEM_ID"), rs.getString("MEM_PWD"), rs.getString("MEM_EMAIL"), rs.getString("MEM_NICK"), rs.getInt("MEM_GRADE"));
+					result.add(dto);
 				} while (rs.next());
 			}
 		} catch (SQLException e) {

@@ -46,6 +46,7 @@ public class JdbcTemplate {
 			conn = DriverManager.getConnection(prop.getProperty("jdbc.url")
 					, prop.getProperty("jdbc.semi.username")
 					, prop.getProperty("jdbc.semi.password"));
+			if(conn != null) System.out.println("연결성공"); else System.out.println("연결실패.확인요망");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

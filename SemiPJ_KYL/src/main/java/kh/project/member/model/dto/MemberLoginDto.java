@@ -12,11 +12,11 @@ public class MemberLoginDto {
 		return "MemberLoginDto [memId=" + memId + ", memPwd=" + memPwd + "]";
 	}
 	
-	public MemberLoginDto(String id, String pwd) {
+	public MemberLoginDto() {
 		super();
 	}
 	
-	public MemberLoginDto(String memId, String memPwd, Integer memGrade) {
+	public MemberLoginDto(String memId, String memPwd) {
 		super();
 		this.memId = memId;
 		this.memPwd = memPwd;

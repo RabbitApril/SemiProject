@@ -33,6 +33,7 @@ public class MemberService {
 		return result;
 	}
 	
+	
 	// select checkId 
 	public int selectCheckId(String memId) {
 		int result = 0;
@@ -41,6 +42,7 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
+	
 	
 	// select checkEmail
 	public int selectCheckEmail(String memEmail) {
