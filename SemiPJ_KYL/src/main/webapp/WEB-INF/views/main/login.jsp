@@ -46,11 +46,15 @@
 			if(cookies[i].getName().equals("memId")) { // 쿠키명 찾아서 값 저장
 				cookie = cookies[i].getValue();}}%>
 	
+	
 	<script> 
-	$(loadedHandler);
+	$(loadedHandler);	
 	function loadedHandler() {
 		//button event 등록
 		$("#frm-login .btn.submit").on("click", frmClickHandler);
+		$("#frm-login .join").on("click",joinMemberClickHandler);
+		$("#frm-login .find.info").on("click", findInfoClickHandler);
+		
 	}
 
 	function frmClickHandler() {
@@ -76,7 +80,15 @@
 						+ request.responseText + "\n"
 						+ "error: "+error);
 				}
-		});	
+		});
+		
+		function joinMemberClickHandler() {
+			location.href="${pageContext.request.contextPath}/join";
+		}
+		
+		function findInfoClickHandler() {
+			console.log("아직 개발중...ㅜ");
+		}
 	}
 	</script>
 

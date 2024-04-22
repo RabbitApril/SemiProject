@@ -49,7 +49,7 @@
 			$.ajax({
 			url: "${pageContext.request.contextPath}/checkId"
 			, method : "post"
-			, data : {cid : $("[name=id]").val(), k1:"v1", k2:"v2" }
+			, data : {cid : $("[name=id]").val(), a1:"v1", a2:"v2" }
 			, success : function(result) {
 				console.log(result);
 				if(result > 0) {
@@ -68,7 +68,7 @@
 			$.ajax({
 				url: "${pageContext.request.contextPath}/checkNickname"
 					, method : "post"
-					, data : {cid : $("[name=nick]").val(), k1:"v1", k2:"v2" }
+					, data : {cid : $("[name=nick]").val(), b1:"v1", b2:"v2" }
 					, success : function(result) {
 						console.log(result);
 						if(result > 0) {
