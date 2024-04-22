@@ -8,33 +8,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class JoinController
+ * Servlet implementation class LogoutController
  */
-@WebServlet("/join")
-public class JoinController extends HttpServlet {
+@WebServlet("/logout")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JoinController() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/main/join.jsp").forward(request, response);
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("/logout doPost");
+		request.getSession().removeAttribute("aceptLogin");
+		response.sendRedirect(request.getContextPath()+"/main");
 	}
 
 }

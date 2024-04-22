@@ -10,7 +10,7 @@ public class MemberDto {
 	private String memPwd;
 	private String memEmail;
 	private String memNick;
-	private char memGrade;
+	private Integer memGrade;
 	
 	@Override
 	public String toString() {
@@ -18,7 +18,7 @@ public class MemberDto {
 				+ ", memGrade=" + memGrade + "]";
 	}
 
-	public MemberDto(String memId, String memPwd, String memEmail, String memNick, char memGrade) {
+	public MemberDto(String memId, String memPwd, String memEmail, String memNick, Integer memGrade) {
 		super();
 		this.memId = memId;
 		this.memPwd = memPwd;
@@ -43,7 +43,7 @@ public class MemberDto {
 		return memNick;
 	}
 
-	public char getMemGrade() {
+	public Integer getMemGrade() {
 		return memGrade;
 	}
 	
