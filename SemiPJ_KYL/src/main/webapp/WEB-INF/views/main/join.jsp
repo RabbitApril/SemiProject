@@ -11,7 +11,7 @@
 <body>
 	<div class="joinbox">
 		<div class="joinImg">
-			<img src="${pageContext.request.contextPath}/WEB-INF/resource/img/로그인 이미지.png" alt="가입 이미지">
+			<img src="${pageContext.request.contextPath}/resource/img/회원가입 이미지.png" alt="가입 이미지">
 		</div>
 		<form class="memberjoin">
 			<div>
