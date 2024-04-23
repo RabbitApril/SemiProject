@@ -9,8 +9,57 @@
     <link href="/CSS/reset.css" rel="stylesheet">
     <link href="/CSS/core.css" rel="stylesheet">
     <link href="/css/layout.css" rel="stylesheet">
+
+    <!-- summernote script -->
+    <script src="/js/summernote/summernote-lite.js"></script>
+    <script src="/js/summernote/lang/summernote-ko-KR.js"></script>
+    <!-- summernote css -->
+    <link rel="stylesheet" href="/CSS/summernote-lite.css">
 </head>
 <body>
-    
+    <div class="wrap">
+        <div class="wap-header">
+            <header>
+                <div class="headerlist">
+                    <div class="notice">
+                        공지사항
+                    </div>
+                    <div class="review">
+                        리뷰게시판
+                    </div>
+                    <div class="mainhome">
+                        <img scr="" alt="메인화면 아이콘">
+                    </div>
+                    <div class="freewrite">
+                        자유게시판
+                    </div>
+                    <div class="mypage">
+                        마이페이지
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="wrap-session">
+            <session>
+                <form id="freeboard">
+                    <div>
+                        <labe>제목</labe>
+                        <input type="text" name="board title" required> 
+                    </div>
+                    <div>
+                        <labe>내용</labe>
+                        <textarea id="summernote" name="board content" required></textarea> 
+                    </div>
+                    <div>
+                        <labe>첨부파일</labe>
+                        <input type="button" class="btn freeboard file"> 
+                    </div>
+                    <div>
+                        <input type="button" name="btn freeboard file" value="글쓰기"> 
+                    </div>
+                </form>
+            </session>
+        </div>
+    </div>
 </body>
 </html>
