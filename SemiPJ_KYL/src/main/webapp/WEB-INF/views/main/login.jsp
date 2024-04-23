@@ -29,8 +29,8 @@
 				<input type="checkbox" name="saveId"><label>아이디 저장</label>
 			</div>
 			<div class="loginFunction">
-				<div class="join">회원가입</div>
-				<div class="find info">아이디/비밀번호 찾기</div>
+				<div role = "button" class="btn join">회원가입</div>
+				<div role = "button" class="btn find info">아이디/비밀번호 찾기</div>
 			</div>
 			<div class="btn login">
 				<input type="button" value="로그인" class="btn submit">
@@ -52,11 +52,18 @@
 	function loadedHandler() {
 		//button event 등록
 		$("#frm-login .btn.submit").on("click", frmClickHandler);
-		$("#frm-login .join").on("click",joinMemberClickHandler);
-		$("#frm-login .find.info").on("click", findInfoClickHandler);
-		
+		$("#frm-login .btn.join").on("click", joinClickHandler);
+		$("#frm-login .btn.find.info").on("click", findInfoClickHandler);
 	}
 
+	function joinClickHandler() {
+		location.href="${pageContext.request.contextPath}/join";
+	}
+	
+	function findInfoClickHandler() {
+		location.href="${pageContext.request.contextPath}/find/memberinfo"
+	}
+	
 	function frmClickHandler() {
 		$.ajax({
 			url:"${pageContext.request.contextPath }/login"
@@ -82,13 +89,7 @@
 				}
 		});
 		
-		function joinMemberClickHandler() {
-			location.href="${pageContext.request.contextPath}/join";
-		}
 		
-		function findInfoClickHandler() {
-			console.log("아직 개발중...ㅜ");
-		}
 	}
 	</script>
 

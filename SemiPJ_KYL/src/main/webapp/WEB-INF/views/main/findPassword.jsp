@@ -1,17 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 찾기</title>
-    <!-- 레이아웃 스타일 -->
-    <link href="/CSS/reset.css" rel="stylesheet">
-    <link href="/CSS/core.css" rel="stylesheet">
-    <link href="/CSS/layout.css" rel="stylesheet">
-    <link href="/CSS/login.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-    <div class="findPasswordbox">
+	<div class="findPasswordbox">
         <form id="frm-findId">
             <div>
                 <label>아이디</label>
