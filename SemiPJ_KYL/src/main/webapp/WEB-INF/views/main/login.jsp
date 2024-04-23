@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+<link href="${pageContext.request.contextPath}/resource/css/reset.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resource/css/core.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resource/css/login.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 
