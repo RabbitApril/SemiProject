@@ -170,8 +170,8 @@ public class MemberDao {
 	
 	public int insert(Connection conn, MemberDto dto) {
 		int result = 0;
-//		INSERT INTO MEMBER VALUES ('ampres15','namesies15','ampres1215@naver.com','하르하르','1');
-		String sql = "INSERT INTO MEMBER (MEM_ID, MEM_PWD, MEM_EMAIL, MEM_NICK, MEM_GRADE) VALUES (?, ?, ?)";
+//		INSERT INTO MEMBER VALUES ('test','test','test','test@test','1');
+		String sql = "INSERT INTO MEMBER (MEM_ID, MEM_PWD, MEM_EMAIL, MEM_NICK, MEM_GRADE) VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -189,6 +189,26 @@ public class MemberDao {
 		return result;
 	}
 	
+	public int update(Connection conn, MemberDto dto) {
+		int result = 0;
+//		INSERT INTO MEMBER VALUES ('test','test','test','test@test','1');
+		String sql = "UPDATE INTO MEMBER (MEM_ID, MEM_PWD, MEM_EMAIL, MEM_NICK, MEM_GRADE) VALUES (?, ?, ?, ?, ?)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			// ? 처리
+			pstmt.setString(1, dto.getMemId());
+			pstmt.setString(2, dto.getMemPwd());
+			pstmt.setString(3, dto.getMemEmail());
+			pstmt.setString(4, dto.getMemNick());
+			pstmt.setInt(5, dto.getMemGrade());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		close(pstmt);
+		return result;
+	}
 	
 	public int delete(Connection conn, String memId) {
 		int result = 0;

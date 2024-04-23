@@ -13,7 +13,7 @@
 		<div class="joinImg">
 			<img src="${pageContext.request.contextPath}/resource/img/회원가입 이미지.png" alt="가입 이미지">
 		</div>
-		<form class="memberjoin">
+		<form action="${pageContext.request.contextPath}/join" method="post" class="memberjoin">
 			<div>
 				<label>아이디</label> <input type="text" name="id">
 				<button type="button" class="btn checkid">중복확인</button>
@@ -55,7 +55,9 @@
 				console.log(result);
 				if(result > 0) {
 					alert("이미 존재하는 아이디입니다.");
-				} 
+				} else{
+					
+				}
 			}, error:function(request,status,error){
 					alert("code: "+request.status + "\n" + "message: " 
 							+ request.responseText + "\n"
@@ -74,6 +76,8 @@
 						console.log(result);
 						if(result > 0) {
 							alert("이미 존재하는 닉네임입니다.");
+						} else{
+							
 						}
 					}, error:function(request,status,error){
 							alert("code: "+request.status + "\n" + "message: " 
