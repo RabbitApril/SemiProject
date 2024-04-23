@@ -21,8 +21,25 @@
             </div>
             <div>
                 <input type = "button" value = "아이디 찾기" class = "btn submit">
+                <input type = "button" value = "로그인창으로 돌아가기" class = "btn login">
             </div>
         </form>
     </div>
+    
+    <script>
+	    $(loadedHandler);
+		function loadedHandler() {
+			$(".btn.login").on("click",btnBackLogin);
+			$(".btn.submit").on("click",btnFindId);
+		}
+		
+		function btnBackLogin() {
+			location.href="${pageContext.request.contextPath}/login";
+		}
+		
+		function btnFindId() {
+			
+		}
+    </script>
 </body>
 </html>
