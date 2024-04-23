@@ -1,7 +1,92 @@
-body{
-    background-color: #C8BFE7;
+.box.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loginbox {
     background-color: white;
+    width: 550px;
+    height: 700px;
+}
+
+.loginImg { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+form {
+    width: 300px;
+    margin: auto;
+    display: block;
+}
+
+form > div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 3px;
+}
+
+.idwrite {
+    border: 0;
+    background-color: #DEDEDE;
+    height: 40px;
+    width: 300px;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 16px;
+    text-indent: 5px;
+}
+
+.pwdwrite {
+    border: 0;
+    background-color: #DEDEDE;
+    height: 40px;
+    width: 300px;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 16px;
+    text-indent: 5px;
+}
+
+input:focus{
+    background-color: aliceblue;
+}
+
+.buttonlayout {
+    margin-top: 30px;
+}
+
+.loginFunction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.loginFunction > div {
+    margin: auto;
+}
+
+.btn.submit {
+    margin-top: 70px;
+    border: 0;
+    width: 150px;
+    height: 50px;
+    background-color: #F8FF7F;
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 20px;
+     text-indent: 5px;
 }
