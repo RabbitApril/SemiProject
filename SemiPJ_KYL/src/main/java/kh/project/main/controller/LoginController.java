@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.project.member.model.dto.MemberInfoDto;
 import kh.project.member.model.dto.MemberLoginDto;
-import kh.project.member.model.servicce.MemberService;
+import kh.project.member.model.service.MemberService;
 
 /**
  * Servlet implementation class LoginController

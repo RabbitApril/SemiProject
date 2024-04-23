@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kh.project.member.model.dto.MemberDto;
-import kh.project.member.model.servicce.MemberService;
+import kh.project.member.model.service.MemberService;
 
 /**
  * Servlet implementation class JoinController

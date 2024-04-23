@@ -46,8 +46,9 @@
 		}
 
 		function btnCheckidClickHandler() {
+			var idVal = $("[name=id]").val();
 			$.ajax({
-			url: "${pageContext.request.contextPath}/checkId"
+			url: "${pageContext.request.contextPath}/checkId.ajax"
 			, method : "post"
 			, data : {cid : $("[name=id]").val(), a1:"v1", a2:"v2" }
 			, success : function(result) {
@@ -60,15 +61,15 @@
 							+ request.responseText + "\n"
 							+ "error: "+error);
 					}
+				});
 			}
-			});
-		}
 
 		function btnCheckNicknameClickHandler() {
+			var idVal = $("[name=nick]").val();
 			$.ajax({
-				url: "${pageContext.request.contextPath}/checkNickname"
+				url: "${pageContext.request.contextPath}/checkNickname.ajax"
 					, method : "post"
-					, data : {cid : $("[name=nick]").val(), b1:"v1", b2:"v2" }
+					, data : {cid : $("[name=nick]").val(), b1:"w1", b2:"w2" }
 					, success : function(result) {
 						console.log(result);
 						if(result > 0) {

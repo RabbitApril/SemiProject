@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kh.project.member.model.servicce.MemberService;
+import kh.project.member.model.service.MemberService;
 
 /**
  * Servlet implementation class CheckIdController
@@ -31,6 +31,7 @@ public class CheckIdController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String a1 = request.getParameter("a1");
 		String a2 = request.getParameter("a2");
+		System.out.println(a1+","+a2);
 		
 		String memId = request.getParameter("cid");
 		

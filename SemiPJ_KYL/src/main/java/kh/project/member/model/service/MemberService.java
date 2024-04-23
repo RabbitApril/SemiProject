@@ -1,4 +1,4 @@
-package kh.project.member.model.servicce;
+package kh.project.member.model.service;
 
 import java.sql.Connection;
 import java.util.List;
