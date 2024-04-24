@@ -1,0 +1,86 @@
+@charset "UTF-8";
+.box.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.joinbox {
+    background-color: white;
+    width: 550px;
+    height: 700px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.joinimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+label {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 5px;
+}
+
+.writebox {
+    position: relative;
+    width: 400px;
+    margin: auto;
+    display: block;
+}
+
+.writebox > div {
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+input {
+    border: 0;
+    background-color: #DEDEDE;
+    height: 40px;
+    width: 300px;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 16px;
+    text-indent: 5px;
+}
+
+input:focus{
+    background-color: aliceblue;
+}
+
+button {
+    border: 0;
+    width: 80px;
+    height: 40px;
+    background-color: #F8FF7F;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 15px;
+}
+
+small {
+    visibility: hidden;
+    padding: 0px 0px 2px 10px;
+    font-size: 14px;
+}
+
+.error small {
+    font-size: 14px;
+    color: red;
+    visibility: visible;
+}
+
+.btnjoin {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #F9C8C8;
+    margin-top: 30px;
+}
