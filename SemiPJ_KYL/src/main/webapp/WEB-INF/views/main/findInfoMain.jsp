@@ -1,3 +1,4 @@
+<jsp:include page="/WEB-INF/views/common/common_css.jsp"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
@@ -9,14 +10,32 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
-	<div class="findinfobox">
-        <div role=”button” class="btn findid">
-            <img src="" alt="아이디찾기" class="findidImg">
-            아이디찾기
-        </div>
-        <div role=”button” class="btn findpassword" class="findpasswordImg">
-            <img src="" alt="비밀번호 찾기">
-            비밀번호 찾기
+	<div class="box container">
+        <div class="findinfobox">
+            <div class="content">
+                <div class="pagename">
+                    아이디/비밀번호 찾기
+                </div>
+                <div class="sitemove">
+                    <div class="decobtn">
+                        <div role=”button” class="btn findid">
+                            <img src="/IMG/일반유저 아이콘.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
+                            <br>아이디찾기
+                        </div>
+                    </div>
+                    <div class="decobtn">
+                        <div role=”button” class="btn findpassword" >
+                            <img src="/IMG/일반유저 아이콘.png" alt="비밀번호 찾기" class="findpasswordImg" width="90px" height="90px">
+                            <br>비밀번호 찾기
+                        </div>
+                    </div>
+                </div>    
+                <div class="mainbtn">
+                    <button type="button" class="backtomain" style="cursor: pointer;"> 
+                        <img src="/IMG/뒤로가기아이콘.png" alt="화살표" class="back" width="30px" height="30px">메인으로 돌아가기 
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

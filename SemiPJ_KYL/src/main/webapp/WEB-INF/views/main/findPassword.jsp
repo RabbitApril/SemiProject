@@ -1,3 +1,4 @@
+<jsp:include page="/WEB-INF/views/common/common_css.jsp"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
@@ -9,22 +10,24 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
-	<div class="findPasswordbox">
-        <form id="frm-findId">
-            <div>
-                <label>아이디</label>
-                <input type="text" name="id">
-            </div>
-            <div>
-                <label>이메일</label>
-                <input type="email" name="email">
-            </div>
-            <div>
-                <input type = "button" value = "비밀번호 찾기" class = "btn submit">
-                <input type = "button" value = "로그인창으로 돌아가기" class = "btn login">
-            </div>
-        </form>
-    </div>
+	<div class="box container">
+		<div class="findPasswordbox">
+	        <form id="frm-findId">
+	            <div>
+	                <label>아이디</label>
+	                <input type="text" name="id">
+	            </div>
+	            <div>
+	                <label>이메일</label>
+	                <input type="email" name="email">
+	            </div>
+	            <div>
+	                <input type = "button" value = "비밀번호 찾기" class = "btn submit">
+	                <input type = "button" value = "로그인창으로 돌아가기" class = "btn login">
+	            </div>
+	        </form>
+    	</div>
+	</div>
     
     <script>
     	$(loadedHandler);

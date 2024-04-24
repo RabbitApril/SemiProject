@@ -16,7 +16,7 @@
 <div class="box container">
 	<div class="joinbox">
 		<div class="joinImg">
-			<img src="${pageContext.request.contextPath}/resource/img/회원가입 이미지.png" alt="가입 이미지" width="120px" height="120px">
+			<img src="${pageContext.request.contextPath}/resource/img/회원가입 이미지.png" alt="가입 이미지" width="120px" height="120px" style="cursor: pointer;">
 		</div>
 		<form action="${pageContext.request.contextPath}/join" method="post">
 			<div class="writebox">
@@ -63,6 +63,12 @@
 			//이벤트 등록
 			$(".btn.checkid").on("click", btnCheckidClickHandler);
 			$(".btn.checknickname").on("click", btnCheckNicknameClickHandler);
+			$("joinImg").on()backtoMainHandler;
+		}
+		
+		function backtoMainHandler() {
+			// 이미지 클릭시 메인으로 돌아가는 event 등록
+			location.href = "${pageContext.request.contextPath}/main"
 		}
 		
 // 		id check

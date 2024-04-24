@@ -20,7 +20,7 @@
 			<div class="loginImg">
 				<img
 					src="${pageContext.request.contextPath}/resource/img/로그인 이미지.png"
-					alt="로그인 이미지" width="250px" height="250x">
+					alt="클릭 시 메인화면으로" width="250px" height="250x" style="cursor: pointer;">
 			</div>
 
 			<!-- ajax 방식 -->
@@ -68,6 +68,7 @@
 			$("#frm-login .btn.submit").on("click", frmClickHandler);
 			$("#frm-login .btn.join").on("click", joinClickHandler);
 			$("#frm-login .btn.find.info").on("click", findInfoClickHandler);
+			$(".loginImg").on("click", backtoMainHandler)
 		}
 
 		function joinClickHandler() {
@@ -77,7 +78,12 @@
 		function findInfoClickHandler() {
 			location.href = "${pageContext.request.contextPath}/find/memberinfo"
 		}
-
+		
+		function backtoMainHandler() {
+			// 이미지 클릭시 메인으로 돌아가는 event 등록
+			location.href = "${pageContext.request.contextPath}/main"
+		}
+		
 		function frmClickHandler() {
 			$.ajax({
 				url : "${pageContext.request.contextPath }/login",
