@@ -21,13 +21,19 @@
 		<form action="${pageContext.request.contextPath}/join" method="post">
 			<div class="writebox">
 				<div>
-					<label>아이디</label> <input type="text" name="id">
-					<button type="button" class="btn checkid">중복확인</button>
+					<label>아이디</label>
+					<div class="infoId">
+                        <input type="text" name="id" class="chkidbox">
+                    	<button type="button" class="btn checkid">중복확인</button>
+                    </div>
 					<small>Error message</small>
 				</div>
 				<div>
-					<label>닉네임</label> <input type="text" name="nick">
-					<button type="button" class="btn checknickname">중복확인</button>
+					<label>닉네임</label>
+                    <div class="infoNick">
+                        <input type="text" name="nick" class="chknickbox">
+                    	<button type="button" class="btn checknickname">중복확인</button>
+                    </div>
 					<small>Error message</small>
 				</div>
 				<div>
@@ -104,6 +110,7 @@
 			}
 			
 // 		회원가입 무결성 체크
+		
 	</script>
 </body>
 </html>

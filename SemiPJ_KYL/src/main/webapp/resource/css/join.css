@@ -43,7 +43,9 @@ input {
     border: 0;
     background-color: #DEDEDE;
     height: 40px;
-    width: 300px;
+    width: 400px;
+
+    position: relative;
 
     /* 내부폰트 */
     font-family: 'Dovemayo_gothic';
@@ -55,11 +57,36 @@ input:focus{
     background-color: aliceblue;
 }
 
+.infoId {
+    position: relative;
+}
+
+.infoNick {
+    position: relative;
+}
+
+.btn.checkid {
+    width: 80px;
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    right: 5px;
+}
+
+.btn.checknickname {
+    width: 80px;
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    right: 5px;
+}
+
 button {
     border: 0;
     width: 80px;
-    height: 40px;
-    background-color: #F8FF7F;
+    height: 35px;
+    background-color: #C8BFE7;
+    border-radius: 3px;
 
     /* 내부폰트 */
     font-family: 'Dovemayo_gothic';
@@ -82,5 +109,5 @@ small {
     font-size: 16px;
     font-weight: bold;
     background-color: #F9C8C8;
-    margin-top: 30px;
+    margin-top: 10px;
 }
