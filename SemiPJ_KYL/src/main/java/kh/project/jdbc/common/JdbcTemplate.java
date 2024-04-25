@@ -19,15 +19,11 @@ public class JdbcTemplate {
 			String currentPath = JdbcTemplate.class.getResource("./").getPath();
 			prop.load(new FileReader(currentPath+"driver.properties"));
 			Class.forName(prop.getProperty("jdbc.driver"));
-			if(isLocalhost) {
-				conn = DriverManager.getConnection(prop.getProperty("jdbc.semi.localhost.url")
+		
+				conn = DriverManager.getConnection(prop.getProperty("jdbc.semi.dbserver.url")
 						, prop.getProperty("jdbc.semi.username")
 						, prop.getProperty("jdbc.semi.password"));
-			} else {
-				conn = DriverManager.getConnection(prop.getProperty("jdbc.semiPJ.dbserver.url")
-						, prop.getProperty("jdbc.semi.username")
-						, prop.getProperty("jdbc.semi.password"));
-			}
+	
 			if(conn != null) System.out.println("DB연결성공"); else System.out.println("DB연결실패");
 			//conn.setAutoCommit(false);
 		} catch (Exception e) {
@@ -43,7 +39,7 @@ public class JdbcTemplate {
 			String currentPath = JdbcTemplate.class.getResource("./").getPath();
 			prop.load(new FileReader(currentPath+"driver.properties"));
 			Class.forName(prop.getProperty("jdbc.driver"));
-			conn = DriverManager.getConnection(prop.getProperty("jdbc.url")
+			conn = DriverManager.getConnection(prop.getProperty("jdbc.semi.dbserver.url")
 					, prop.getProperty("jdbc.semi.username")
 					, prop.getProperty("jdbc.semi.password"));
 			if(conn != null) System.out.println("연결성공"); else System.out.println("연결실패.확인요망");

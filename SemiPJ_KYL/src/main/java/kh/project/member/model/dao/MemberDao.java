@@ -35,6 +35,7 @@ public class MemberDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		System.out.println("dao login test "+ result);
 		close(rs);
 		close(pstmt);
 		return result;

@@ -12,7 +12,7 @@
 		
 	</typeAliases>
 	
-	<environments default="development1">
+	<environments default="development2">
 		<environment id="development1">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">

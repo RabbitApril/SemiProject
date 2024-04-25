@@ -63,6 +63,7 @@ public class LoginController extends HttpServlet {
 		
 		// ajax 방식, 성공 : 1 , 실패 : 0 
 		int result = 0; 
+		System.out.println(dto);
 		MemberInfoDto resultInfo = service.loginGetInfo(dto);
 		if(resultInfo != null) {
 			request.getSession().setAttribute("aceptLogin", resultInfo);
