@@ -4,3 +4,23 @@
     justify-content: center;
     align-items: center;
 }
+
+.findId.box {
+    background-color: white;
+    width: 550px;
+    height: 700px;
+
+    /* 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.findid.title {
+    font-size: 30px;
+}
+
+.frm-findId {
+
+}
