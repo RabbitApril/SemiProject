@@ -17,10 +17,60 @@
     flex-direction: column;
 }
 
+form > div {
+    margin-bottom: 20px;
+}
+
+.findid.title {
+    margin-bottom: 50px;
+}
+
 .findid.title {
     font-size: 30px;
 }
 
 .frm-findId {
 
+}
+
+label {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 3px;
+}
+
+div > input {
+    border: 0;
+    background-color: #DEDEDE;
+    height: 40px;
+    width: 300px;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 16px;
+    text-indent: 5px;
+}
+
+.btn.submit {
+    margin-top: 30px;
+    border: 0;
+    width: 150px;
+    height: 50px;
+    background-color: #F8FF7F;
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 20px;
+}
+
+.btn.login {
+    margin-top: 30px;
+    border: 0;
+    width: 150px;
+    height: 50px;
+    background-color: #F8FF7F;
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 20px;
 }
