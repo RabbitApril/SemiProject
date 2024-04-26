@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.box.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.findinfobox {
+    background-color: white;
+    width: 550px;
+    height: 700px;
+
+    /* 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    margin: 40px;
+    text-align: center;
+}
+
+.pagename {
+    font-size: 30px;
+}
+
+.sitemove {
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+
+.sitemove > div {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.decobtn{
+    background-color: pink;
+    border-radius: 10px;
+}
+
+.btn.findid {
+    border: 3px dashed black;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 10px;
+    
+}
+
+.btn.findpassword {
+    border: 3px dashed black;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 10px;
+}
+
+.mainbtn {
+    text-align: center;
+}
+
+.back { 
+    margin-right: 5px;
+}
+
+.backtomain{
+    /* 스타일 옵션 */
+    border: 3px solid #A596D8;
+    background-color: #C8BFE7;
+    border-radius: 3px;
+    width: 170px;
+    height: 40px;
+
+    /* 정렬옵션 */
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 17px;
+}

@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <title>아이디/비밀번호 찾기</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<!-- findInfo 영역 style -->
+<link href="<%=request.getContextPath()%>/resource/css/findinfoMain.css" rel="stylesheet">
 </head>
 <body>
 	<div class="box container">

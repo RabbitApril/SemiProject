@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .box.container{
     height: 100vh;
     display: flex;
@@ -5,7 +6,7 @@
     align-items: center;
 }
 
-.findPasswordbox {
+.findId.box {
     background-color: white;
     width: 550px;
     height: 700px;
@@ -21,7 +22,7 @@ form > div {
     margin-bottom: 20px;
 }
 
-.findpwd.title {
+.findid.title {
     margin-bottom: 50px;
     font-size: 30px;
     text-align: center;

@@ -8,10 +8,18 @@
 <meta charset="UTF-8">
 <title>아이디 찾기</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<!-- findid 영역 style -->
+<link href="<%=request.getContextPath()%>/resource/css/findid.css" rel="stylesheet">
+
 </head>
 <body>
 	<div class="box container">
-		<div class="findIdbox">
+		<div class="findId box">
+			<div class="findid title">
+				<img src = "대충이미지넣기" alt = "아이디찾기 이미지"><br>
+				아이디 찾기
+			</div>
 	        <form id="frm-findId">
 	            <div>
 	                <label>닉네임</label>
@@ -23,7 +31,7 @@
 	            </div>
 	            <div>
 	                <input type = "button" value = "아이디 찾기" class = "btn submit">
-	                <input type = "button" value = "로그인창으로 돌아가기" class = "btn login">
+	                <input type = "button" value = "로그인으로" class = "btn login">
 	            </div>
 	        </form>
     	</div>
