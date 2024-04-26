@@ -5,3 +5,4 @@
 <link href="${pageContext.request.contextPath}/resource/css/reset.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resource/css/core.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resource/css/layout.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resource/css/header.css" rel="stylesheet">

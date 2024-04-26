@@ -5,54 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자유게시판 :: 글쓰기</title>
 
+    <!-- 레이아웃 스타일 -->
+    <link href="/CSS/reset.css" rel="stylesheet">
+    <link href="/CSS/core.css" rel="stylesheet">
+    <link href="/CSS/layout.css" rel="stylesheet">
+    <link href="/CSS/header.css" rel="stylesheet">
+
     <!-- ckeditor5 script-->
     <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
 </head>
 <body>
-    <div class="wrap">
-        <div class="wap-header">
-            <header>
-                <div class="headerlist">
-                    <div class="notice">
-                        <a href="">공지사항</a>
-                    </div>
-                    <div class="review">
-                        <a href="">리뷰게시판</a>
-                    </div>
-                    <div class="mainhome">
-                        <img scr="" alt="메인화면 아이콘">
-                    </div>
-                    <div class="freewrite">
-                        <a href="">자유게시판</a>
-                    </div>
-                    <div class="mypage">
-                        <a href="">마이 페이지</a>
-                    </div>
-                </div>
-            </header>
-        </div>
-        <div class="wrap-session">
-            <session>
-                <form id="freeboard">
-                    <div>
-                        <labe>제목</labe>
-                        <input type="text" name="board title" required> 
-                    </div>
-                    <div>
-                        <labe>내용</labe>
-                        <!-- ck에디터 넣기 -->
-                        <textarea id="editor" name="board content" required></textarea> 
-                    </div>
-                    <div>
-                        <labe>첨부파일</labe>
-                        <input type="button" class="btn freeboard file"> 
-                    </div>
-                    <div>
-                        <input type="button" name="btn freeboard file" value="글쓰기"> 
-                    </div>
-                </form>
-            </session>
-        </div>
-    </div>
+
 </body>
 </html>

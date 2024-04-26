@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 header {
     /* position - absoulte 자식들의 기준점 */
     position: relative;

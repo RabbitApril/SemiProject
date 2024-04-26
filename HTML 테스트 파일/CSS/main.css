@@ -1,0 +1,23 @@
+section {
+    background-color: white;
+}
+
+section .notice.article > a {
+    text-decoration: none;
+    color: black;
+}
+
+section .title1 {
+    font-family: 'KCC-Hanbit';
+    font-size: 30px;
+}
+
+aside{
+    background-color: #E9E5F8;
+
+    /* 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
