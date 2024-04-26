@@ -1,12 +1,12 @@
 @charset "UTF-8";
-.box.container{
+.joinWrap{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.joinbox {
+.join-inner {
     background-color: white;
     width: 550px;
     height: 700px;

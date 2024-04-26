@@ -15,8 +15,8 @@
 </head>
 
 <body>
-	<div class="box container">
-		<div class="loginbox">
+	<div class="loginWrap">
+		<div class="login-inner">
 			<div class="loginImg">
 				<img
 					src="${pageContext.request.contextPath}/resource/img/로그인 이미지.png"

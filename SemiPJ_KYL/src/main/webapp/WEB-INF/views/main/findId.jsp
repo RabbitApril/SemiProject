@@ -14,8 +14,8 @@
 
 </head>
 <body>
-	<div class="box container">
-		<div class="findId box">
+	<div class="findidWrap">
+		<div class="findid-inner">
 			<div class="findid title">
 				<img src = "대충이미지넣기" alt = "아이디찾기 이미지"><br>
 				아이디 찾기

@@ -1,12 +1,12 @@
 @charset "UTF-8";
-.box.container{
+.findidWrap{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.findId.box {
+.findid-inner {
     background-color: white;
     width: 550px;
     height: 700px;

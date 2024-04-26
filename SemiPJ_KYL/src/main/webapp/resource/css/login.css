@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-.box.container{
+.loginWrap{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.loginbox {
+.login-inner {
     background-color: white;
     width: 550px;
     height: 700px;

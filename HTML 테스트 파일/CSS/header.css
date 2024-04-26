@@ -1,0 +1,36 @@
+header {
+    /* position - absoulte 자식들의 기준점 */
+    position: relative;
+    height: 150px;
+}
+
+header nav {
+    /* style 속성 */
+    background-color: #7565AD;
+    color: white;
+    height: 40px;
+
+    /* 배치속성 */
+    position: relative;
+    top: 100px;
+}
+
+header nav > ul{
+    /* float - 부모 */
+    overflow: hidden;
+}
+header nav > ul > li {
+    /* float - width 제외 - 고정크기x content에 따라 크기*/
+    float: left; 
+}
+
+header nav
+, header div.logo {
+    /* float - 해제*/
+    clear: both;
+}
+
+header div.logo {
+    /* position - absoulte 배치 */
+    position: absolute;
+}

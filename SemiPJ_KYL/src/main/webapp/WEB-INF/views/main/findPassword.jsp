@@ -13,8 +13,8 @@
 <link href="<%=request.getContextPath()%>/resource/css/findpwd.css" rel="stylesheet">
 </head>
 <body>
-	<div class="box container">
-		<div class="findPasswordbox">
+	<div class="findpwdWrap">
+		<div class="findpwd-inner">
 			<div class="findpwd title">
 				<img src = "대충이미지넣기" alt = "비밀번호찾기 이미지"><br>
 				비밀번호 찾기

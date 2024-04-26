@@ -1,12 +1,12 @@
 @charset "UTF-8";
-.box.container{
+.findinfoWrap{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.findinfobox {
+.findinfo-inner {
     background-color: white;
     width: 550px;
     height: 700px;
@@ -74,9 +74,10 @@
     height: 40px;
 
     /* 정렬옵션 */
+    position: relative;
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    left: 50px;
     
     /* 내부폰트 */
     font-family: 'Dovemayo_gothic';

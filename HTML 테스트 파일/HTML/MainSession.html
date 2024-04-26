@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
 
-    <!-- 레이아웃 스타일 -->
-    <link href="/CSS/reset.css" rel="stylesheet">
-    <link href="/CSS/core.css" rel="stylesheet">
-    <link href="/css/layout.css" rel="stylesheet">
-    
     <!-- 부트스트랩 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -18,33 +13,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+    <!-- 레이아웃 스타일 -->
+    <link href="/CSS/reset.css" rel="stylesheet">
+    <link href="/CSS/core.css" rel="stylesheet">
+    <link href="/CSS/layout.css" rel="stylesheet">
+    <link href="/CSS/header.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrap">
         <div class="wrap-header">
             <header>
-                <div class="headerlist">
-                    <div class="notice">
-                        <a href="Noticeboard.html">공지사항</a>
-                    </div>
-                    <div class="review">
-                        <a href="Reviewboard.html">리뷰게시판</a>
-                    </div>
-                    <div class="mainhome">
-                        <img scr="mainsession" alt="메인화면 아이콘">
-                    </div>
-                    <div class="freewrite">
-                        <a href="Freeboard.html">자유게시판</a>
-                    </div>
-                    <div class="mypage">
-                        <a href="Mypage.html">마이 페이지</a>
-                    </div>
+                <div class="logo">
+                    <img src="/IMG/미등록 프로필사진.png" alt="로고" width="100px" height="100px">
                 </div>
+                <nav class="top menu">
+                    <ul class="top menu">
+                        <li class="notice">
+                            <a href="Noticeboard.html">공지사항</a>
+                        </li>
+                        <li class="review">
+                            <a href="Reviewboard.html">리뷰게시판</a>
+                        </li>
+                        <li class="freewrite">
+                            <a href="Freeboard.html">자유게시판</a>
+                        </li>
+                        <li class="mypage">
+                            <a href="Mypage.html">마이 페이지</a>
+                        </li>
+                    </ul>
+                </nav>
             </header>
         </div>
-        <div class="wrap-session">
+        <div class="wrap-main">
             <session>
+                <div>
+                    포트폴리오
+                </div>
                 <!-- 부트스트랩 사용 캐러셀. 이미지는 받아서 넣을것 -->
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -77,13 +83,13 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div class="session notice">
-                    <a href="Noticeboard.html" >공지사항</a>
+                <div class="notice article">
+                    <a href="Noticeboard.html">공지사항</a>
                     <hr>
                     (목록 들어가는 곳)
                 </div>
                 <div class="resent review">
-                    <a href="Reviewboard.html" >최근 리뷰</a>
+                    <a href="Reviewboard.html">최근 리뷰</a>
                     <hr>
                     (목록 들어가는 곳)
                 </div>
@@ -91,7 +97,15 @@
         </div>
         <div class="wrap-aside">
             <aside>
-                <div class="memberInfo">
+                <div class="before login">
+                    <div class="login">
+                        <input type="button" value="로그인" class="btn login">
+                    </div>
+                    <div class="join">
+                        <input type="button" value="회원가입" class="btn join">
+                    </div>
+                </div>
+                <div class="after login">
                     <div class="profileImg">
                         프로필사진
                     </div>
@@ -109,13 +123,20 @@
                 </div>
                 <div class="eventtable">
                     <div class="aside write">
-                        <img src = "https://picsum.photos/200/300" alt = "서평 남기기">
+                        <button type="button" class="backtomain">
+                            <img src="/IMG/notes.png" alt="서평 남기기" width="30px" height="30px"> 서평 남기기
+                        </button>
                     </div>
                     <div class="libraryInfo">
-                        <img src = "https://picsum.photos/200/300" alt = "통합자료검색 - 경기도 사이버 도서관">
+                        <a href="https://www.library.kr/cyber/index.do">
+                            <img src="https://picsum.photos/200/300" alt="통합자료검색 - 경기도 사이버 도서관" width="150px"
+                                height="50px">
+                        </a>
                     </div>
                     <div class="SIBF">
-                        <img src = "https://picsum.photos/200/300" alt = "서울 국제 도서전">
+                        <a href="https://sibf.or.kr/">
+                            <img src="https://picsum.photos/200/300" alt="서울 국제 도서전" width="150px" height="50px">
+                        </a>
                     </div>
                 </div>
             </aside>

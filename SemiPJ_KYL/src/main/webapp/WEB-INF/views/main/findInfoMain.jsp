@@ -13,8 +13,8 @@
 <link href="<%=request.getContextPath()%>/resource/css/findinfoMain.css" rel="stylesheet">
 </head>
 <body>
-	<div class="box container">
-        <div class="findinfobox">
+	<div class="findinfoWrap">
+        <div class="findinfo-inner">
             <div class="content">
                 <div class="pagename">
                     아이디/비밀번호 찾기

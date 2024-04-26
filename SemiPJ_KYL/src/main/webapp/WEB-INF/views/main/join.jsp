@@ -13,8 +13,8 @@
 <link href="<%=request.getContextPath()%>/resource/css/join.css" rel="stylesheet">
 </head>
 <body>
-<div class="box container">
-	<div class="joinbox">
+<div class="joinWrap">
+	<div class="join-inner">
 		<div class="joinImg">
 			<img src="${pageContext.request.contextPath}/resource/img/회원가입 이미지.png" alt="가입 이미지" width="120px" height="120px" style="cursor: pointer;">
 		</div>
