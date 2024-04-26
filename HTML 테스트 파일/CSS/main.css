@@ -10,6 +10,13 @@ section .notice.article > a {
 section .title1 {
     font-family: 'KCC-Hanbit';
     font-size: 30px;
+
+    /* 간격조정 */
+    margin-bottom: 10px;
+}
+
+section .portfolio {
+    margin-bottom: 40px;
 }
 
 aside{
