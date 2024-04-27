@@ -26,7 +26,7 @@ public class LogoutController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("/logout doPost");
+		System.out.println("/logout doPost()");
 		request.getSession().removeAttribute("aceptLogin");
 		response.sendRedirect(request.getContextPath()+"/main");
 	}

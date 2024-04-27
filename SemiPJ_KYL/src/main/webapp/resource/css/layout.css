@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
 /*  */
-.wrap-header {
-    background-color: #C8BFE7;
-}
-
 .wrap-header > header{
     /* 중앙 배치 */
     width: 1080px; margin: 0 auto;

@@ -22,7 +22,11 @@
 body {
     font-family: 'Dovemayo_gothic';
     font-size: 20px;
-    background-color: #C8BFE7;
+
+    height: 100vh;
+    background-image: url("/IMG/배경.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 a, a:visited, a:active {
