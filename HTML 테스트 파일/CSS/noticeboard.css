@@ -1,0 +1,88 @@
+section .title1 {
+    font-family: 'KCC-Hanbit';
+    font-size: 30px;
+
+    /* 간격조정 */
+    margin-bottom: 10px;
+}
+
+section .gap1 {
+    border: none;
+    /* 간격조정 */
+    margin: 20px 0 70px 0;
+}
+
+section .board.grid, .boardcontent.grid{
+	display:grid;
+	grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+section .board.grid {
+    height: 30px;
+    border-top: 2px solid #7565AD;
+    padding-top: 10px;
+    font-size: 19px;
+}
+
+section .board.grid > div{
+	text-align: center;
+}
+
+section .boardcontent.grid > div {
+    display: flex;
+    text-align: center;
+    font-size: 17px;
+}
+
+section .boardcontent.grid {
+    margin-bottom: 50px;
+}
+
+section ul {
+    list-style-type:none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section ul > li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+section .btn.writenotice {
+    border: 0;
+    width: 100px;
+    height: 30px;
+    background-color: #e7e7e7;
+    margin-bottom: 10px;
+
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 15px;
+}
+
+section .noticeboard.grid.top  {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+section .searchnotice {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+section .btn.submitkeyword {
+    border: 0;
+    width: 50px;
+    height: 20px;
+    background-color: #e7e7e7;
+
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 15px;
+}

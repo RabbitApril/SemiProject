@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,127 @@
     <link href="/CSS/core.css" rel="stylesheet">
     <link href="/CSS/layout.css" rel="stylesheet">
     <link href="/CSS/header.css" rel="stylesheet">
-    
-</head>
-<body>
+    <link href="/CSS/noticeboard.css" rel="stylesheet">
 
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="wrap-header">
+            <header>
+                <div class="logo">
+                    <a href="MainSession.html">
+                        <img src="/IMG/미등록 프로필사진.png" alt="로고" width="90px" height="90px">
+                    </a>
+                </div>
+                <nav class="top menu">
+                    <ul class="top menu">
+                        <li class="notice">
+                            <a href="Noticeboard.html">공지사항</a>
+                        </li>
+                        <li class="review">
+                            <a href="Reviewboard.html">리뷰게시판</a>
+                        </li>
+                        <li class="freewrite">
+                            <a href="Freeboard.html">자유게시판</a>
+                        </li>
+                        <li class="mypage">
+                            <a href="Mypage.html">마이 페이지</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrap-main">
+            <section>
+                <div class="title1">
+                    공지사항
+                </div>
+                <hr class="gap1">
+                <div class="noticeboard grid top">
+                    <div class="searchform">
+                        <form id="frm-searchform" class="searchnotice">
+                            <select name="searchnotice">
+                                <option value="n01">제목</option>
+                                <option value="n01">작성자</option>
+                            </select>
+                            <div class="searchnoticekeyword">
+                                <input type="text" class="keyword">
+                                <button type="submit" class="btn submitkeyword">검색</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div><button type="button" class="btn writenotice">글쓰기</button></div>
+                </div>
+                <div class="board grid">
+                    <div>번호</div>
+                    <div>제목</div>
+                    <div>작성자</div>
+                    <div>조회수</div>
+                    <div>좋아요</div>
+                </div>
+                <hr class="line1">
+                <div class="boardcontent grid">
+                    <!-- 내용 -->
+                    <div>내용확인용 번호</div>
+                    <div>내용확인용</div>
+                    <div>내용확인용</div>
+                    <div>내용확인용</div>
+                    <div>내용확인용</div>
+                    <!-- <div>아직 작성된 글이 없어요.</div> -->
+                </div>
+                <div class="pageNumLink">
+                    <ul>
+                        <li>1</li>
+                    </ul>
+                </div>
+            </section>
+            <aside>
+                <div class="before login">
+                    <div class="login">
+                        <input type="button" value="로그인" class="btn login">
+                    </div>
+                    <div class="join">
+                        <input type="button" value="회원가입" class="btn join">
+                    </div>
+                </div>
+                <div class="after login">
+                    <div class="profileImg">
+                        프로필사진
+                    </div>
+                    <div class="name">
+                        <div class="memNick">
+                            아이디
+                        </div>
+                        <div class="gradeicon">
+                            <img src="" alt="유저구분아이콘">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="button" value="로그아웃" class="btn logout">
+                    </div>
+                </div>
+                <hr class="gap1" />
+                <div class="eventtable">
+                    <div class="aside write">
+                        <button type="button" class="review write">
+                            <img src="/IMG/notes.png" alt="서평 남기기" width="30px" height="30px"> 서평 남기기
+                        </button>
+                    </div>
+                    <div class="libraryInfo">
+                        <a href="https://www.library.kr/cyber/index.do">
+                            <img src="/IMG/사이버 도서관 로고.png" alt="통합자료검색 - 경기도 사이버 도서관" width="180px" height="50px">
+                        </a>
+                    </div>
+                    <div class="SIBF">
+                        <a href="https://sibf.or.kr/">
+                            <img src="/IMG/국제도서전 이미지.png" alt="서울 국제 도서전" width="180px" height="50px">
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
 </body>
+
 </html>

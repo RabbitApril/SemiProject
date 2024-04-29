@@ -3,7 +3,7 @@
 
 <header>
 	<div class="logo">
-		<a href="${pageContext.request.contextPath}/main"> <img src="${pageContext.request.contextPath}/resource/img/로그인 이미지.png" alt="로고"
+		<a href="${pageContext.request.contextPath}/main"> <img src="${pageContext.request.contextPath}/resource/img/메인화면 아이콘.png" alt="로고"
 			width="80px" height="80px">
 		</a>
 	</div>

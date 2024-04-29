@@ -1,4 +1,4 @@
-<jsp:include page="/WEB-INF/views/common/common_css.jsp"/>
+<jsp:include page="/WEB-INF/views/common/common_css2.jsp"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
@@ -22,13 +22,13 @@
                 <div class="sitemove">
                     <div class="decobtn">
                         <div role=”button” class="btn findid">
-                            <img src="/IMG/일반유저 아이콘.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
+                            <img src="${pageContext.request.contextPath}/resource/img/아이디 찾기.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
                             <br>아이디찾기
                         </div>
                     </div>
                     <div class="decobtn">
                         <div role=”button” class="btn findpassword" >
-                            <img src="/IMG/일반유저 아이콘.png" alt="비밀번호 찾기" class="findpasswordImg" width="90px" height="90px">
+                            <img src="${pageContext.request.contextPath}/resource/img/비밀번호 찾기.png" alt="비밀번호 찾기" class="findpasswordImg" width="90px" height="90px">
                             <br>비밀번호 찾기
                         </div>
                     </div>

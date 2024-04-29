@@ -70,8 +70,7 @@ input:focus{
 .loginFunction {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: auto;
+
 }
 
 .loginFunction > div {

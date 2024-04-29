@@ -6,7 +6,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
         
-<jsp:include page="/WEB-INF/views/common/common_css.jsp"/> 
+<jsp:include page="/WEB-INF/views/common/common_css1.jsp"/> 
        
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -31,35 +31,9 @@
 	</div>
 	<div class="wrap-main">
 		<%@include file="/WEB-INF/views/main/main_section.jsp"%>
+		<%@include file="/WEB-INF/views/common/aside.jsp"%>
 	</div>
 </div>
-<script>
-$(loadedHandler); 
-function loadedHandler() {
-	//event 등록 
-	$(".btn.login").on("click", btnLoginClickHandler);
-	$(".btn.join").on("click", btnJoinClickHandler);
-	$(".btn.logout").on("click", btnLogoutClickHandler);
-}
 
-function btnLoginClickHandler() {
-	location.href="${pageContext.request.contextPath}/login";	
-}
-
-function btnJoinClickHandler() {
-	location.href="${pageContext.request.contextPath}/join";	
-}
-
-function btnLogoutClickHandler() {
-	location.href="${pageContext.request.contextPath}/logout";
-	
-	alert("사이트에서 로그아웃되었습니다.");
-	
-	var frmlogout = document.getElementById("frm-logout");
-	frmlogout.action = "${pageContext.request.contextPath}/logout";
-	frmlogout.method = "post";
-	frmlogout.submit();
-}
-</script>
 </body>
 </html>

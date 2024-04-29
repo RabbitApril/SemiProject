@@ -1,7 +1,3 @@
-section {
-    background-color: white;
-}
-
 section .mainmenu {
     /* 배치 */
     display: flex;
@@ -46,66 +42,3 @@ section .portfolio {
     margin-bottom: 40px;
 }
 
-aside{
-    background-color: #E9E5F8;
-
-    /* 배치 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-aside .btn.login, .btn.join, .btn.logout {
-    border: 0;
-    width: 170px;
-    height: 40px;
-    background-color: #A093CE;
-    margin-bottom: 10px;
-
-     /* 내부폰트 */
-     font-family: 'Dovemayo_gothic';
-     font-size: 20px;
-}
-
-aside .name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-aside .gap1 {
-    border: 0;
-    margin-bottom: 70px;
-}
-
-aside .review.write {
-    border: 2px solid #7565AD;
-    border-radius: 5px;
-    width: 180px;
-    height: 50px;
-    background-color: white;
-    margin-bottom: 10px;
-    
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-
-     /* 내부폰트 */
-     font-family: 'Dovemayo_gothic';
-     font-size: 20px;
-}
-
-aside .libraryInfo , .SIBF {
-    margin-bottom: 10px;
-}
-
-aside .libraryInfo , .SIBF > a > img {
-    border: 2px solid #7565AD;
-    background-color: white;
-    border-radius: 5px;
-}
