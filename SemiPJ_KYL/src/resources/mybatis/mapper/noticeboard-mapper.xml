@@ -7,4 +7,8 @@
   	<result column="ORIGINAL_FILENAME" property="originalFilename"/>
   	<result column="SAVED_FILE_PATH_NAME" property="savedFilePathName"/>
   </resultMap>
+  
+  <select id="selectNoticePageList" resultType="NoticeBoardListDto">
+  	
+  </select>
 </mapper>

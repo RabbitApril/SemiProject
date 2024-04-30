@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MybatisTemplate {
-	public static SqlSession getSqlSesisSession() {
+	public static SqlSession getSqlSesisSession(boolean autoCommit) {
 		String resource = "mybatis-config.xml";
 		SqlSession sqlSession = null;
 		try {

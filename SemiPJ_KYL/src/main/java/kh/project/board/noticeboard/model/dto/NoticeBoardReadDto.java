@@ -23,7 +23,7 @@ public class NoticeBoardReadDto {
 	}
 
 	public NoticeBoardReadDto(Integer noticeId, String noticeTitle, String noticeContent, String noticeTime,
-			String admId, List<NoticeBoardFileReadDto> filedtolist) {
+			String admId) {
 		super();
 		this.noticeId = noticeId;
 		this.noticeTitle = noticeTitle;

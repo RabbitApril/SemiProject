@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항</title>
+<title>리뷰 게시판</title>
 
 <!-- reviewboard section 영역 style -->
 <link href="<%=request.getContextPath()%>/resource/css/board.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 		<%@include file="/WEB-INF/views/common/header.jsp"%>
 	</div>
 	<div class="wrap-main">
-		<%@include file="/WEB-INF/views/board/noticeboard/noticeboard_section.jsp"%>
+		<%@include file="/WEB-INF/views/board/reviewboard/reviewboard_section.jsp"%>
 		<%@include file="/WEB-INF/views/common/aside.jsp"%>
 	</div>
 </div>
