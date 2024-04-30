@@ -44,5 +44,6 @@
 	
 	<mappers>
 <!-- 		xxx.mapper.xml 생성 시 추가 -->
+	<mapper resource="mappers/noticeboard-mapper.xml"/>
 	</mappers>
 </configuration>

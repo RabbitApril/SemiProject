@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="noticeboardns">
+  <resultMap type="kh.project.board.noticeboard.model.dto.NoticeBoardFileReadDto" id="NoticeBoardFileReadDtResultMap">
+  	<result column="NOTICE_ID" property="noticeId"/>
+  	<result column="BOARD_FILE_ID" property="boardFileId"/>
+  	<result column="ORIGINAL_FILENAME" property="originalFilename"/>
+  	<result column="SAVED_FILE_PATH_NAME" property="savedFilePathName"/>
+  </resultMap>
+</mapper>

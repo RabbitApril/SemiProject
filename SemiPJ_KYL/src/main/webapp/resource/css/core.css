@@ -17,11 +17,10 @@
 body {
     font-family:'Dovemayo_gothic';
     font-size: 20px;
-
-    height: 100vh;
     background-image: url("../img/배경.png");
     background-size: cover;
     background-repeat: no-repeat;
+    object-fit: fill;
 }
 
 a, a:visited, a:active {

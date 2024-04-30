@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+section .title1 {
+	font-family: 'KCC-Hanbit';
+	font-size: 30px;
+	/* 간격조정 */
+	margin-bottom: 20px;
+}
+
+section .line1 {
+	border: 1px solid #7565AD;
+}
+
+section .gap1 {
+	border: none;
+	/* 간격조정 */
+	margin: 20px 0 50px 0;
+}
+
+section .titlewrite {
+	margin-bottom: 5px;
+}
+
+section .titlewrite>input {
+	width: 830px;
+	height: 50px;
+	border: 0;
+	border-radius: 5px;
+	background-color: #DEDEDE;
+	/* 내부텍스트 서식 */
+	font-family: 'Dovemayo_gothic';
+	text-indent: 5px;
+	font-size: 25px;
+}
+
+section .titlewrite>input:focus {
+	background-color: aliceblue;
+}
+
+section .btnfilearea {
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+}
+
+section .btn.file, .btn.file-cancle {
+	margin-top: 5px;
+	border: 0;
+	width: 100px;
+	height: 30px;
+	background-color: #DEDEDE;
+	cursor: pointer;
+	
+	/* 내부폰트 */
+	font-family: 'Dovemayo_gothic';
+	font-size: 15px;
+}
+
+section input[type=file]::file-selector-button {
+  	margin-top: 5px;
+	border: 0;
+	width: 100px;
+	height: 30px;
+	background-color: #DEDEDE;
+	cursor: pointer;
+	text-align: center;
+
+	
+	/* 내부폰트 */
+	font-family: 'Dovemayo_gothic';
+	font-size: 15px;
+}
+
+section .after.button {
+	display: flex; 
+	align-items : center; 
+	justify-content : left;
+	flex-direction: row;
+}
+
+section .btn.write {
+	margin-top: 70px;
+	border: 0;
+	width: 150px;
+	height: 50px;
+	background-color: #F8FF7F;
+	cursor: pointer;
+	/* 내부폰트 */
+	font-family: 'Dovemayo_gothic';
+	font-size: 20px;
+}
+
+section .submit.area {
+	text-align: center;
+}
+
+section .ck.ck-editor {
+	max-width: 830px;
+}
+
+section .ck-editor__editable {
+	min-height: 600px;
+}

@@ -10,9 +10,107 @@
     <link href="/CSS/core.css" rel="stylesheet">
     <link href="/CSS/layout.css" rel="stylesheet">
     <link href="/CSS/header.css" rel="stylesheet">
+    <link href="/CSS/writeNotice.css" rel="stylesheet">
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
     
 </head>
 <body>
-
+    <div class="wrap">
+        <div class="wrap-header">
+            <header>
+                <div class="logo">
+                    <a href="MainSession.html">
+                        <img src="/IMG/미등록 프로필사진.png" alt="로고" width="90px" height="90px">
+                    </a>
+                </div>
+                <nav class="top menu">
+                    <ul class="top menu">
+                        <li class="notice">
+                            <a href="Noticeboard.html">공지사항</a>
+                        </li>
+                        <li class="review">
+                            <a href="Reviewboard.html">리뷰게시판</a>
+                        </li>
+                        <li class="freewrite">
+                            <a href="Freeboard.html">자유게시판</a>
+                        </li>
+                        <li class="mypage">
+                            <a href="Mypage.html">마이 페이지</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrap-main">
+            <section>
+                <div class="title1">
+                    공지사항 작성 
+                </div>
+                <hr class="line1">
+                <hr class="gap1">
+                <form id="frm-noticewrite">
+                    <div class="titlewrite">
+                        <input type="text" name="subject" placeholder="제목을 입력해 주세요." required>
+                    </div>
+                    <div id="editor">
+                        <textarea>확인용</textarea>
+                    </div>
+                    <div class="btnfilearea">
+                        <button type="button" class="btn file">첨부파일</button>
+                        <button type="button" class="btn select-file">파일선택</button>
+                        <button type="button" class="btn file-cancle">취소</button>
+                    </div>
+                    <div class="submit area">
+                        <button type="button" class="btn write">글쓰기</button>
+                    </div>
+                </form>
+            </section>
+            <aside>
+                <div class="before login">
+                    <div class="login">
+                        <input type="button" value="로그인" class="btn login">
+                    </div>
+                    <div class="join">
+                        <input type="button" value="회원가입" class="btn join">
+                    </div>
+                </div>
+                <div class="after login">
+                    <div class="profileImg">
+                        프로필사진
+                    </div>
+                    <div class="name">
+                        <div class="memNick">
+                            아이디
+                        </div>
+                        <div class="gradeicon">
+                            <img src="" alt="유저구분아이콘">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="button" value="로그아웃" class="btn logout">
+                    </div>
+                </div>
+                <hr class="gap1" />
+                <div class="eventtable">
+                    <div class="aside write">
+                        <button type="button" class="review write">
+                            <img src="/IMG/notes.png" alt="서평 남기기" width="30px" height="30px"> 서평 남기기
+                        </button>
+                    </div>
+                    <div class="libraryInfo">
+                        <a href="https://www.library.kr/cyber/index.do">
+                            <img src="/IMG/사이버 도서관 로고.png" alt="통합자료검색 - 경기도 사이버 도서관" width="180px" height="50px">
+                        </a>
+                    </div>
+                    <div class="SIBF">
+                        <a href="https://sibf.or.kr/">
+                            <img src="/IMG/국제도서전 이미지.png" alt="서울 국제 도서전" width="180px" height="50px">
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
 </body>
 </html>
