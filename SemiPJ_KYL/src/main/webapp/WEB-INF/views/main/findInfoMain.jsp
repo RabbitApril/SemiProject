@@ -23,7 +23,7 @@
                 <div class="sitemove">
                     <div class="decobtn">
                         <div role=”button” class="btn findid">
-                            <img src="${pageContext.request.contextPath}/resource/img/아이디 찾기.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
+                            <img src="${pageContext.request.contextPath}/resource/img/아이디찾기.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
                             <br>아이디찾기
                         </div>
                     </div>

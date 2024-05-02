@@ -18,7 +18,7 @@
 	<div class="findidWrap">
 		<div class="findid-inner">
 			<div class="findid title">
-				<img src = "대충이미지넣기" alt = "아이디찾기 이미지"><br>
+				<img src = "${pageContext.request.contextPath}/resource/img/아이디찾기.png" alt = "아이디찾기 이미지" width="100px" height="100px"><br>
 				아이디 찾기
 			</div>
 	        <form id="frm-findId">

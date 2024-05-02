@@ -29,18 +29,45 @@
 		<div>조회수</div>
 	</div>
 	<hr class="line1">
-	<div class="boardcontent grid">
-		<!-- 내용 -->
-		<div>내용확인용 번호</div>
-		<div>내용확인용</div>
-		<div>내용확인용</div>
-		<div>내용확인용</div>
-		<div>내용확인용</div>
-		<!-- <div>아직 작성된 글이 없어요.</div> -->
-	</div>
+	<c:choose>
+		<c:when test="${empty map.dtolist }">
+		아직 아무런 공지가 없어요. 
+		</c:when>
+		<c:otherwise>
+			<c:forEach items="${map.dtolist }" var="vo" varStatus="vs">
+				<div class="boardcontent grid">
+					<!-- 내용 -->
+					<div>${vo.noticeId }</div>
+					<div>${vo.noticeTitle }</div>
+					<div>${vo.admId }</div>
+					<div>${vo.noticeTime }</div>
+					<div> - </div>
+				</div>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
 	<div class="pageNumLink">
 		<ul>
-			<li>1</li>
+			<c:if test="${map.startPageNum > 1}">
+				<li><a
+					href="${pageContext.request.contextPath }/notice/list?page=${map.startPageNum-1 }">
+						&lt;&lt; </a></li>
+			</c:if>
+			<c:forEach begin="${map.startPageNum }" end="${map.endPageNum }"
+				var="page">
+				<c:if test="${map.currentPageNum == page }">
+					<li><strong>${page }</strong></li>
+				</c:if>
+				<c:if test="${map.currentPageNum != page }">
+					<li><a
+						href="${pageContext.request.contextPath }/notice/list?page=${page }">${page }</a></li>
+				</c:if>
+			</c:forEach>
+			<c:if test="${map.endPageNum < map.totalPageCount }">
+				<li><a
+					href="${pageContext.request.contextPath }/notice/list?page=${map.endPageNum+1 }">
+						&gt;&gt; </a></li>
+			</c:if>
 		</ul>
 	</div>
 </section>

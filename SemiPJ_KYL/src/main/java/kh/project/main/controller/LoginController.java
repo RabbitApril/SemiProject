@@ -52,7 +52,6 @@ public class LoginController extends HttpServlet {
 		System.out.println(checkbox);
 		
 		if(checkbox != null) { //체크박스 체크여부에 따라 쿠키 저장 확인
-			
 			// 체크박스 체크 시 쿠키 저장
 			response.addCookie(cookie);
 		} else {
@@ -63,7 +62,6 @@ public class LoginController extends HttpServlet {
 		
 		// ajax 방식, 성공 : 1 , 실패 : 0 
 		int result = 0; 
-		System.out.println(dto);
 		MemberInfoDto resultInfo = service.loginGetInfo(dto);
 		if(resultInfo != null) {
 			request.getSession().setAttribute("aceptLogin", resultInfo);

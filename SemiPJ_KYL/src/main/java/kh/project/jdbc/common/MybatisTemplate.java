@@ -9,12 +9,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MybatisTemplate {
-private static String resource = "mybatis-config.xml";
+private static String resources = "mybatis-config.xml";
 	
 	public static SqlSession getSqlSession() {  
 		SqlSession session = null; 
 		try {
-			InputStream inputStream = Resources.getResourceAsStream(resource);
+			InputStream inputStream = Resources.getResourceAsStream(resources);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 			session = sqlSessionFactory.openSession(true);    // 매개인자 없으면 true 기본
 		} catch (IOException e) {
@@ -26,7 +26,7 @@ private static String resource = "mybatis-config.xml";
 	public static SqlSession getSqlSession(boolean autoCommit) {
 		SqlSession session = null;  
 		try {
-			InputStream inputStream = Resources.getResourceAsStream(resource);
+			InputStream inputStream = Resources.getResourceAsStream(resources);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 			session = sqlSessionFactory.openSession(autoCommit);
 		} catch (IOException e) {

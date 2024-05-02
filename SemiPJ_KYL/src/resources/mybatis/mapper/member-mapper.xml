@@ -3,7 +3,7 @@
 <mapper namespace="memberMapper">
 
 <select id="loginGetInfo" parameterType="MemberLoginDto" resultType="MemberInfoDto">
-	SELECT MEM_ID, MEM_EMAIL FROM MEMBER WHERE MEM_ID=#{memId} AND MEM_PWD=#{memPwd}
+	SELECT MEM_ID, MEM_NICK FROM MEMBER WHERE MEM_ID=#{memId} AND MEM_PWD=#{memPwd}
 </select>
 
 <select id="login" parameterType="MemberLoginDto" resultType="int">
