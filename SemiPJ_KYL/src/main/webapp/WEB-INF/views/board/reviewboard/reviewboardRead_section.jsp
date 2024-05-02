@@ -41,11 +41,6 @@
 		<div class="replyread-wrap">
 			<div class="replywriter">테스트</div>
 			<div class="replycontent">테스트 내용</div>
-			<button type="button" class="btn show rreplycontent">댓글 더보기</button>
-		</div>
-		<div class="rreplycontent span">
-			<input type="text" name="boardReplyContent" class="boardReplyContent">
-			<button type="button" class="btn rreplay">등록</button>
 		</div>
 	</div>
 </section>

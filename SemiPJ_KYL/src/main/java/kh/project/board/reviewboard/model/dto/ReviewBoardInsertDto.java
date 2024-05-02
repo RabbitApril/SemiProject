@@ -1,5 +1,7 @@
 package kh.project.board.reviewboard.model.dto;
 
+import java.util.List;
+
 public class ReviewBoardInsertDto {
 //	REVIEW_ID      NOT NULL NUMBER         
 //	REVIEW_TITLE   NOT NULL VARCHAR2(120)  
@@ -11,20 +13,23 @@ public class ReviewBoardInsertDto {
 	private String reviewTitle;
 	private String reviewContent;
 	private String memId;
+	private List<ReviewBoardFileWriteDto> fileList;
 	
 	@Override
 	public String toString() {
 		return "ReviewBoardInsertDto [reviewTitle=" + reviewTitle + ", reviewContent=" + reviewContent + ", memId="
-				+ memId + "]";
+				+ memId + ", fileList=" + fileList + "]";
 	}
 	
-	public ReviewBoardInsertDto(String reviewTitle, String reviewContent, String memId) {
+	public ReviewBoardInsertDto(String reviewTitle, String reviewContent, String memId,
+			List<ReviewBoardFileWriteDto> fileList) {
 		super();
 		this.reviewTitle = reviewTitle;
 		this.reviewContent = reviewContent;
 		this.memId = memId;
+		this.fileList = fileList;
 	}
-	
+
 	public String getReviewTitle() {
 		return reviewTitle;
 	}
@@ -37,4 +42,7 @@ public class ReviewBoardInsertDto {
 		return memId;
 	}
 	
+	public List<ReviewBoardFileWriteDto> getFileList() {
+		return fileList;
+	}
 }

@@ -15,7 +15,9 @@
 		</c:when>
 		<c:otherwise>
 			<div class="after login">
-				<div class="profileImg">프로필사진</div>
+				<div class="profileImg">
+					<img src = "${pageContext.request.contextPath}/resource/img/미등록 프로필사진.png" alt="미등록 프로필사진" width = "150px" height="150px">
+				</div>
 				<div class="name">
 					<div class="memNick">아이디</div>
 					<div class="gradeicon">
@@ -59,6 +61,7 @@ function loadedHandler() {
 	$(".btn.login").on("click", btnLoginClickHandler);
 	$(".btn.join").on("click", btnJoinClickHandler);
 	$(".btn.logout").on("click", btnLogoutClickHandler);
+	$(".review.write").on("click",btnReviewWriteClickHandler)
 }
 
 function btnLoginClickHandler() {
@@ -76,5 +79,9 @@ function btnLogoutClickHandler() {
 	frmlogout.action = "${pageContext.request.contextPath}/logout";
 	frmlogout.method = "post";
 	frmlogout.submit();
+}
+
+function btnReviewWriteClickHandler() {
+	location.href="${pageContext.request.contextPath}/review/write";
 }
 </script>

@@ -1,5 +1,7 @@
 package kh.project.board.freeboard.model.dto;
 
+import java.util.List;
+
 public class FreeBoardInsertDto {
 //	BOARD_ID      NOT NULL NUMBER         
 //	BOARD_TITLE   NOT NULL VARCHAR2(120)  
@@ -11,18 +13,21 @@ public class FreeBoardInsertDto {
 	private String boardTitle;
 	private String boardContent;
 	private String memId;
+	private List<FreeBoardFileWriteDto> fileList;
 	
 	@Override
 	public String toString() {
 		return "FreeBoardInsertDto [boardTitle=" + boardTitle + ", boardContent=" + boardContent + ", memId=" + memId
-				+ "]";
+				+ ", fileList=" + fileList + "]";
 	}
 
-	public FreeBoardInsertDto(String boardTitle, String boardContent, String memId) {
+	public FreeBoardInsertDto(String boardTitle, String boardContent, String memId,
+			List<FreeBoardFileWriteDto> fileList) {
 		super();
 		this.boardTitle = boardTitle;
 		this.boardContent = boardContent;
 		this.memId = memId;
+		this.fileList = fileList;
 	}
 
 	public String getBoardTitle() {
@@ -37,4 +42,7 @@ public class FreeBoardInsertDto {
 		return memId;
 	}
 	
+	public List<FreeBoardFileWriteDto> getFileList() {
+		return fileList;
+	}
 }

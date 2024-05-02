@@ -23,29 +23,4 @@
 				국회의장이 이를 공포한다.</div>
 		</div>
 	</div>
-	<hr class="gap1">
-	<div class="reply area">
-		<form id="frm-reply">
-			<input type="hidden" name="boardId">
-			<div class="reply">
-				<div>
-					<input type="text" name="boardReplyContent"
-						class="replycontentwrite" required>
-					<button type="button" class="btn reply">전송</button>
-				</div>
-			</div>
-		</form>
-	</div>
-	<hr class="gap2">
-	<div class="reply-wrap">
-		<div class="replyread-wrap">
-			<div class="replywriter">테스트</div>
-			<div class="replycontent">테스트 내용</div>
-			<button type="button" class="btn show rreplycontent">댓글 더보기</button>
-		</div>
-		<div class="rreplycontent span">
-			<input type="text" name="boardReplyContent" class="boardReplyContent">
-			<button type="button" class="btn rreplay">등록</button>
-		</div>
-	</div>
 </section>

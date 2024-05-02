@@ -24,5 +24,18 @@
 		<%@include file="/WEB-INF/views/common/aside.jsp"%>
 	</div>
 </div>
+
+<script>
+$(loadedHandler);
+function loadedHandler() {
+	// button 이벤트 등록 
+	$(".btn.writecontent").on("click", writenotceClickHandler);
+}
+
+function writenotceClickHandler() {
+	location.href = "${pageContext.request.contextPath}/review/write"
+}
+</script>
+
 </body>
 </html>
