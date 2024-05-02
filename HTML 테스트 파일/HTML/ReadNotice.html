@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+
+    <!-- 레이아웃 스타일 -->
+    <link href="/CSS/reset.css" rel="stylesheet">
+    <link href="/CSS/core.css" rel="stylesheet">
+    <link href="/CSS/layout.css" rel="stylesheet">
+    <link href="/CSS/header.css" rel="stylesheet">
+    <link href="/CSS/readnotice.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="wrap-header">
+            <header>
+                <div class="logo">
+                    <a href="MainSession.html">
+                        <img src="/IMG/미등록 프로필사진.png" alt="로고" width="90px" height="90px">
+                    </a>
+                </div>
+                <nav class="top menu">
+                    <ul class="top menu">
+                        <li class="notice">
+                            <a href="Noticeboard.html">공지사항</a>
+                        </li>
+                        <li class="review">
+                            <a href="Reviewboard.html">리뷰게시판</a>
+                        </li>
+                        <li class="freewrite">
+                            <a href="Freeboard.html">자유게시판</a>
+                        </li>
+                        <li class="mypage">
+                            <a href="Mypage.html">마이 페이지</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrap-main">
+            <section>
+                <div class="read area">
+                    <div class="btn function">
+                        <div>
+                            <button class="btn update">수정</button>
+                        </div>
+                        <div>
+                            <button class="btn delete">삭제</button>
+                        </div>
+                    </div>
+                    <div class="readwrite">
+                        <div class="boardtitle">
+                            제목 확인용
+                        </div>
+                        <div class="boardfile">
+                            파일 표시
+                        </div>
+                        <div class="boardcontent">
+                            대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 선거에 관한 경비는 법률이 정하는 경우를
+                            제외하고는 정당 또는 후보자에게 부담시킬 수 없다. 모든 국민은 인간다운 생활을 할 권리를 가진다. 대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이
+                            임명한다.
+
+                            위원은 정당에 가입하거나 정치에 관여할 수 없다. 대통령은 취임에 즈음하여 다음의 선서를 한다. 공무원인 근로자는 법률이 정하는 자에 한하여 단결권·단체교섭권 및
+                            단체행동권을 가진다. 헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다. 대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다.
+                            제5항에
+                            의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후 5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다.
+                        </div>
+                    </div>
+                </div>
+                <hr class="gap1">
+                <div class="reply area">
+                    <form id="frm-reply">
+                        <input type="hidden" name="boardId">
+                        <div class="reply">
+                            <div>
+                                <input type="text" name="boardReplyContent" class="replycontentwrite" required>
+                                <button type="button" class="btn reply">전송</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <hr class="gap2">
+                <div class="reply-wrap">
+                    <div class="replyread-wrap">
+                        <div class="replywriter">테스트</div>
+                        <div class="replycontent">테스트 내용</div>
+                        <button type="button" class="btn show rreplycontent">댓글 더보기</button>
+                    </div>
+                    <div class="rreplycontent span">
+                        <input type="text" name="boardReplyContent" class="boardReplyContent">
+                        <button type="button" class="btn rreplay">등록</button>
+                    </div>
+                </div>
+            </section>
+            <aside>
+                <div class="before login">
+                    <div class="login">
+                        <input type="button" value="로그인" class="btn login">
+                    </div>
+                    <div class="join">
+                        <input type="button" value="회원가입" class="btn join">
+                    </div>
+                </div>
+                <div class="after login">
+                    <div class="profileImg">
+                        프로필사진
+                    </div>
+                    <div class="name">
+                        <div class="memNick">
+                            아이디
+                        </div>
+                        <div class="gradeicon">
+                            <img src="" alt="유저구분아이콘">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="button" value="로그아웃" class="btn logout">
+                    </div>
+                </div>
+                <hr class="gap1" />
+                <div class="eventtable">
+                    <div class="aside write">
+                        <button type="button" class="review write">
+                            <img src="/IMG/notes.png" alt="서평 남기기" width="30px" height="30px"> 서평 남기기
+                        </button>
+                    </div>
+                    <div class="libraryInfo">
+                        <a href="https://www.library.kr/cyber/index.do">
+                            <img src="/IMG/사이버 도서관 로고.png" alt="통합자료검색 - 경기도 사이버 도서관" width="180px" height="50px">
+                        </a>
+                    </div>
+                    <div class="SIBF">
+                        <a href="https://sibf.or.kr/">
+                            <img src="/IMG/국제도서전 이미지.png" alt="서울 국제 도서전" width="180px" height="50px">
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>

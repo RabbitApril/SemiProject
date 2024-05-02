@@ -1,5 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="freeboardMapper">
+  <resultMap type="FreeBoardReadDto" id="FreeBoardReadDtoResultMap">
+  	<result column="BOARD_ID" property="boardId" />
+  	<result column="BOARD_FILE_ID" property="boardFileId" />
+  	<result column="ORIGINAL_FILENAME" property="originalFilename" />
+  	<result column="SAVED_FILE_PATH_NAME" property="SavedFilePathName" />
+  </resultMap>
   
+  <select id="selectFileList" parameterType="int" resultMap="FreeBoardReadDtoResultMap">
+  	SELECT BOARD_ID, BOARD_FILE_ID, ORIGINAL_FILENAME, SAVED_FILE_PATH_NAME
+  	FROM FREEBOARD_FILE WHERE BOARD_ID=#{boardId}
+  </select>
+  
+  <select id="selectFreeBoardReplyList" parameterType="int" resultType="FreeBoardReplyListDto">
+  	SELECT BOARD_ID, BOARD_REPLY_ID, MEM_ID, BOARD_REPLY_CONTENT, BOARD_REPLY_LOG_IP,
+  			BOARD_REPLY_LEVEL, BOARD_REPLY_REF, BOARD_REPLY_STEP
+  	FROM BOARD_REPLY WHERE BOARD_ID=#{boardId} ORDER BY BOARD_REPLY_REF DESC, BOARD_REPLY_STEP
+  </select>
+  
+  <select id="selectTotalCount" resultType="int">
+  	SELECT COUNT(*) FROM FREEBOARD;
+  </select>
+  
+  <select id="selectPageList" resultType="FreeBoardListDto" parameterType="map">
+  	SELECT BOARD_ID, BOARD_TITLE, TO_CHAR(WRITE_TIME,'yyyy-mm-dd') WRITE_TIME, MEM_ID, READ_COUNT
+  	FROM FREEBOARD ORDER BY BOARD_ID DESC
+  </select>
+  
+  <select id="selectPageListRowBounds" resultType="FreeBoardListDto">
+  	SELECT BOARD_ID, BOARD_TITLE, TO_CHAR(WRITE_TIME,'yyyy-mm-dd'), MEM_ID, READ_COUNT
+  	FROM (SELECT T1.*, ROWNUM RN
+  			FROM (SELECT BOARD_ID, BOARD_TITLE, WRITE_TIME, MEM_ID, READ_COUNT FROM FREEBOARD ORDER BY BOARD_ID DESC) T1)
+  	WHERE RN BETWEEN #{startRownum} AND #{endRownum}
+  </select>
+  
+  <select id="selectAllList" resultType="FreeBoardListDto">
+  	SELECT BOARD_ID, BOARD_TITLE, BOARD_CONTENT, WRITE_TIME, READ_COUNT, READ_GOOD, MEM_ID
+  	FROM FREEBOARD
+  </select>
+  
+  <select id="selectOne" resultType="FreeBoardReadDto" parameterType="int">
+  	SELECT BOARD_ID, BOARD_TITLE, BOARD_CONTENT, WRITE_TIME, READ_COUNT, READ_GOOD, MEM_ID
+  	FROM FREEBOARD WHERE BOARD_ID=#{boardId}
+  </select>
+  
+  <select id="getSequenceNum" resultType="int">
+  	SELECT SEQ_BOARD_ID.NEXTVAL SEQ FROM DUAL
+  </select>
+  
+  <insert id="insert" parameterType="FreeBoardInsertDto">
+	INSERT ALL
+	INTO FREEBOARD (BOARD_ID, BOARD_TITLE, BOARD_CONTENT, WRITE_TIME, MEM_ID, READ_COUNT, READ_GOOD)
+	VALUES (SEQ_BOARD_ID.NEXTVAL, #{boardTitle}, #{boardContent}, default, #{memId}, default, default)
+	<if test = "fileList != null">
+		<foreach collection="fileList" item="filedto" index="idx" separator=" ">
+			INTO FREEBOARD_FILE (BOARD_ID, BOARD_FILE_ID, ORIGINAL_FILENAME, SAVED_FILE_PATH_NAME)
+			VALUES (SEQ_BOARD_ID.NEXTVAL, #{idx}, #{filedto.filePath}, #{filedto.orginalFileName})
+		</foreach>
+	</if>
+	SELECT * FROM DUAL
+  </insert>
+  
+  <insert id="insertReply" parameterType="FreeBoardReplyWriteDto">
+  	INSERT INTO BOARD_REPLY VALUES (SELECT NVL(MAX(BOARD_REPLY_ID),0)+1 FROM BOARD_REPLY),
+  	#{boardId}, #{memId}, #{boardReplyContent}, DEFAULT, NULL, DEFAULT,
+  	(SELECT NVL(MAX(BOARD_REPLY_ID),0)+1 FROM BOARD_REPLY), DEFAULT)
+  </insert>
+  
+  <insert id="insertRReply" parameterType="FreeBoardReplyWriteDto">
+  	INSERT INTO BOARD_REPLY VALUES ((SELECT NVL(MAX(BOARD_REPLY_ID),0)+1 FROM BOARD_REPLY),
+  	#{boardId}, #{memId}, #{boardReplyContent} , DEFAULT , NULL,
+  	(SELECT BOARD_REPLY_LEVEL+1 FROM BOARD_REPLY WHERE BOARD_REPLY_ID = #{boardReplyId} ), 
+	(SELECT BOARD_REPLY_REF     FROM BOARD_REPLY WHERE BOARD_REPLY_ID = #{boardReplyId} ), 
+	(SELECT BOARD_REPLY_STEP+1  FROM BOARD_REPLY WHERE BOARD_REPLY_ID = #{boardReplyId} ))
+  </insert>
+  
+  <update id="update" parameterType="FreeBoardDto">
+  	UPDATE FREEBOARD SET BOARD_TITLE=#{boardTitle}, BOARD_CONTENT=#{boardContent}, WRITE_TIME=default WHERE MEM_ID=#{boardId}
+  </update>
+  
+  <update id="updateReadCount" parameterType="int">
+  	UPDATE FREEBOARD SET READ_COUNT=READ_COUNT + 1 WHERE BOARD_ID=#{boardId}
+  </update>
+  
+  <update id="updateReplyStep" parameterType="int">
+  	UPDATE BOARD_REPLY SET BOARD_REPLY_STEP = BOARD_REPLY_STEP+1   
+		WHERE
+		BOARD_REPLY_REF = (SELECT BOARD_REPLY_REF FROM BOARD_REPLY WHERE BOARD_REPLY_ID = #{boardReplyId})
+		AND 
+		BOARD_REPLY_STEP > (SELECT BOARD_REPLY_STEP FROM BOARD_REPLY WHERE BOARD_REPLY_ID = #{boardReplyId})
+  </update>
+  
+  <delete id="delete" parameterType="int">
+  	DELETE FROM FREEBOARD WHERE BOARD_ID=#{boardId}
+  </delete>
 </mapper>

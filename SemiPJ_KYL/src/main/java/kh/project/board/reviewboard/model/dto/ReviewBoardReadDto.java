@@ -18,12 +18,90 @@ public class ReviewBoardReadDto {
 	private Integer reviewGood;
 	private String memId;
 	private List<ReviewBoardFileReadDto> filedtolist;
+	
 	@Override
 	public String toString() {
 		return "ReviewBoardReadDto [reviewId=" + reviewId + ", reviewTitle=" + reviewTitle + ", reviewContent="
 				+ reviewContent + ", reviewTime=" + reviewTime + ", reviewCount=" + reviewCount + ", reviewGood="
 				+ reviewGood + ", memId=" + memId + ", filedtolist=" + filedtolist + "]";
 	}
-	
-	
+
+	public ReviewBoardReadDto(Integer reviewId, String reviewTitle, String reviewContent, String reviewTime,
+			Integer reviewCount, Integer reviewGood, String memId, List<ReviewBoardFileReadDto> filedtolist) {
+		super();
+		this.reviewId = reviewId;
+		this.reviewTitle = reviewTitle;
+		reviewContent = reviewContent.replaceAll("\\r?\\n", "<br>");
+		reviewContent = reviewContent.replaceAll(" ", "&nbsp;");
+		this.reviewContent = reviewContent;
+		this.reviewTime = reviewTime;
+		this.reviewCount = reviewCount;
+		this.reviewGood = reviewGood;
+		this.memId = memId;
+	}
+
+	public Integer getReviewId() {
+		return reviewId;
+	}
+
+	public String getReviewTitle() {
+		return reviewTitle;
+	}
+
+	public String getReviewContent() {
+		return reviewContent;
+	}
+
+	public String getReviewTime() {
+		return reviewTime;
+	}
+
+	public Integer getReviewCount() {
+		return reviewCount;
+	}
+
+	public Integer getReviewGood() {
+		return reviewGood;
+	}
+
+	public String getMemId() {
+		return memId;
+	}
+
+	public List<ReviewBoardFileReadDto> getFiledtolist() {
+		return filedtolist;
+	}
+
+	public void setReviewId(Integer reviewId) {
+		this.reviewId = reviewId;
+	}
+
+	public void setReviewTitle(String reviewTitle) {
+		this.reviewTitle = reviewTitle;
+	}
+
+	public void setReviewContent(String reviewContent) {
+		this.reviewContent = reviewContent;
+	}
+
+	public void setReviewTime(String reviewTime) {
+		this.reviewTime = reviewTime;
+	}
+
+	public void setReviewCount(Integer reviewCount) {
+		this.reviewCount = reviewCount;
+	}
+
+	public void setReviewGood(Integer reviewGood) {
+		this.reviewGood = reviewGood;
+	}
+
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+
+	public void setFiledtolist(List<ReviewBoardFileReadDto> filedtolist) {
+		this.filedtolist = filedtolist;
+	}
+
 }

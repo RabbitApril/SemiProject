@@ -1,13 +1,12 @@
 package kh.project.board.noticeboard.model.service;
 
-import java.sql.Connection;
+import static kh.project.jdbc.common.MybatisTemplate.getSqlSession;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
-
-import static kh.project.jdbc.common.JdbcTemplate.*;
 
 import kh.project.board.noticeboard.model.dao.NoticeBoardDao;
 import kh.project.board.noticeboard.model.dto.NoticeBoardDto;
@@ -15,91 +14,98 @@ import kh.project.board.noticeboard.model.dto.NoticeBoardFileReadDto;
 import kh.project.board.noticeboard.model.dto.NoticeBoardInsertDto;
 import kh.project.board.noticeboard.model.dto.NoticeBoardListDto;
 import kh.project.board.noticeboard.model.dto.NoticeBoardReadDto;
-import kh.project.mybatis.common.MybatisTemplate;
 
 public class NoticeBoardService {
 	private NoticeBoardDao dao = new NoticeBoardDao();
-	
+
 	public Map<String, Object> selectPageListMybatis(int pageSize, int pageBlockSize, int currentPageNum) {
 		Map<String, Object> result = null;
-		SqlSession session = MybatisTemplate.getSqlSesisSession(true);
-		
-		List<NoticeBoardListDto> noticeboardList = dao.selectPageListMybatis(session, pageSize, currentPageNum);
-		
+		SqlSession session = getSqlSession();
+		List<NoticeBoardListDto> noticeboardList = dao.selectPageListRowBounds(session, pageSize, currentPageNum);
+		session.close();
 		return result;
 	}
-	
-	public Map<String, Object> selectNoticePageList(int pageSize, int pageBlockSize, int currentPageNum) {
+
+	// select list - all
+	public Map<String, Object> selectPageList(int pageSize, int pageBlockSize, int currentPageNum) {
 		Map<String, Object> result = null;
-		Connection conn = getSemiConnection(true);
-		
-		System.out.println("currentPageNum: " + currentPageNum);
-		int start = pageSize * (currentPageNum - 1) +1;
+		SqlSession session = getSqlSession();
+
+		int start = pageSize * (currentPageNum - 1) + 1;
 		int end = pageSize * currentPageNum;
-		
-		int totalPageCount = dao.selectTotalCount(conn);
-		int startPageNum = (currentPageNum % pageBlockSize == 0) ? ((currentPageNum / pageBlockSize) - 1) * pageBlockSize + 1 : ((currentPageNum / pageBlockSize)) * pageBlockSize + 1; 
-		int endPageNum = (startPageNum + pageBlockSize > totalPageCount) ? totalPageCount : startPageNum + pageBlockSize - 1;
-		
-		List<NoticeBoardListDto> dtolist = dao.selectNoticePageList(conn, start, end);
-		close(conn);
-		
+
+		int totalCount = dao.selectTotalCount(session);
+		int totalPageCount = (totalCount % pageSize == 0) ? totalCount / pageSize : totalCount / pageSize + 1;
+
+		int startPageNum = (currentPageNum % pageBlockSize == 0)
+				? ((currentPageNum / pageBlockSize) - 1) * pageBlockSize + 1
+				: ((currentPageNum / pageBlockSize)) * pageBlockSize + 1;
+		int endPageNum = (startPageNum + pageBlockSize > totalPageCount) ? totalPageCount
+				: startPageNum + pageBlockSize - 1;
+
+		List<NoticeBoardListDto> dtolist = dao.selectPageList(session, start, end);
+		session.close();
+
 		result = new HashMap<String, Object>();
 		result.put("dtolist", dtolist);
 		result.put("totalPageCount", totalPageCount);
 		result.put("startPageNum", startPageNum);
 		result.put("endPageNum", endPageNum);
 		result.put("currentPageNum", currentPageNum);
-		
-		System.out.println("selectPageList() : " + result);
-		
+
 		return result;
 	}
-	
+
 	// select list - all
 	public List<NoticeBoardListDto> selectAllList() {
 		List<NoticeBoardListDto> result = null;
-		Connection conn = getSemiConnection(true);
-		result = dao.selectAllList(conn);
-		close(conn);
+		SqlSession session = getSqlSession();
+		result = dao.selectAllList(session);
+		session.close();
+
 		return result;
+
 	}
-	
-	public NoticeBoardReadDto selectOne(Integer noticeId) {
+
+	// select one
+	public NoticeBoardReadDto selectOne(Integer boardId) {
 		NoticeBoardReadDto result = null;
-		Connection conn = getSemiConnection(true);
-		result = dao.selectOne(conn, noticeId);
-		
-		List<NoticeBoardFileReadDto> filelist = dao.selectNoticeBoardFileList(conn, noticeId);
-		
-		close(conn);
+		SqlSession session = getSqlSession();
+		result = dao.selectOne(session, boardId);
+		if (result != null) {
+			dao.updateReadCount(session, boardId);
+		}
+		List<NoticeBoardFileReadDto> filelist = dao.selectFileList(session, boardId);
+		result.setFiledtolist(filelist);
+		session.close();
+
 		return result;
 	}
-	
-	//insert
+
+	// insert
 	public int insert(NoticeBoardInsertDto dto) {
 		int result = 0;
-		Connection conn = getSemiConnection(true);
-		result = dao.insert(conn, dto);
-		close(conn);
+		SqlSession session = getSqlSession();
+		result = dao.insert(session, dto);
+		session.close();
 		return result;
 	}
 	
 	// update
 	public int update(NoticeBoardDto dto) {
 		int result = 0;
-		Connection conn = getSemiConnection(true);
-		result = dao.update(conn, dto);
-		close(conn);
+		SqlSession session = getSqlSession();
+		result = dao.update(session, dto);
+		session.close();
 		return result;
 	}
 	
 	// delete
-	public int delete(Integer noticeId) {
+	public int delete(Integer boardId) {
 		int result = 0;
-		Connection conn = null;
-		result = dao.delete(conn, noticeId);
-		close(conn);
+		SqlSession session = getSqlSession();
+		result = dao.delete(session, boardId);
+		session.close();
 		return result;
-		}	
+	}
 }

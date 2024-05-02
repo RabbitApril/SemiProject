@@ -1,4 +1,4 @@
-<jsp:include page="/WEB-INF/views/common/common_css2.jsp"/>
+<jsp:include page="/WEB-INF/views/common/common_css_firstline.jsp"/> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,6 +9,7 @@
 <title>회원가입</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
+<jsp:include page="/WEB-INF/views/common/common_css2.jsp"/>
 <!-- join 영역 style -->
 <link href="<%=request.getContextPath()%>/resource/css/join.css" rel="stylesheet">
 </head>

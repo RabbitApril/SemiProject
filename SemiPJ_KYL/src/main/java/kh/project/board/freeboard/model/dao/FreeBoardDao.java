@@ -7,22 +7,23 @@ import java.util.Map;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
-import com.fasterxml.jackson.databind.deser.impl.CreatorCandidate.Param;
-
-import static kh.project.jdbc.common.JdbcTemplate.*;
-
-import kh.project.board.freeboard.controller.FreeBoardListController;
 import kh.project.board.freeboard.model.dto.FreeBoardDto;
 import kh.project.board.freeboard.model.dto.FreeBoardFileReadDto;
 import kh.project.board.freeboard.model.dto.FreeBoardInsertDto;
 import kh.project.board.freeboard.model.dto.FreeBoardListDto;
 import kh.project.board.freeboard.model.dto.FreeBoardReadDto;
+import kh.project.board.freeboard.model.dto.FreeBoardReplyListDto;
 import kh.project.board.freeboard.model.dto.FreeBoardReplyWriteDto;
 
 public class FreeBoardDao {
 	// select list - all
 	public List<FreeBoardFileReadDto> selectFileList(SqlSession session, Integer boardId) {
 		return session.selectList("freeboardMapper.selectFileList", boardId);
+	}
+	
+	// select list - freeboard reply
+	public List<FreeBoardReplyListDto> selectFreeBoardReplyList(SqlSession session, Integer boardId) {
+		return session.selectList("freeboardMapper.selectFreeBoardReplyList", boardId);
 	}
 	
 	//select total Count 
@@ -33,7 +34,7 @@ public class FreeBoardDao {
 	public List<FreeBoardListDto> selectPageListRowBounds(SqlSession session, int pageSize, int currentPageNum) {
 		int offset = (currentPageNum - 1) * pageSize;
 		RowBounds rbounds = new RowBounds( offset , pageSize);
-		return session.selectList("freeboardMapper.selectPageList", null, rbounds);
+		return session.selectList("freeboardMapper.selectPageListRowBounds", null, rbounds);
 	}
 	
 	// select list - all
@@ -61,7 +62,7 @@ public class FreeBoardDao {
 	
 	// insert - Replyreply
 	public int insertRReply(SqlSession session, FreeBoardReplyWriteDto dto) {
-		return session.insert("freeboardMapper.inserinsertRReply", dto);
+		return session.insert("freeboardMapper.insertRReply", dto);
 	}
 	
 	// insert - Reply origin

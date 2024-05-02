@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+section .btn.function {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+section .btn.update {
+    border: 0;
+    width: 60px;
+    height: 30px;
+    background-color: #DEDEDE;
+    cursor: pointer;
+    margin-right: 5px;
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 15px;
+}
+
+section .btn.delete {
+    border: 0;
+    width: 60px;
+    height: 30px;
+    background-color: #DEDEDE;
+    cursor: pointer;
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 15px;
+}
+
+section .boardtitle {
+    margin: 20px 0 20px 0;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 30px;
+}
+
+section .boardfile {
+    border: 0;
+    background-color: #DEDEDE;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* 내부폰트 */
+    font-size: 15px;
+}
+
+section .boardcontent {
+    min-height: 600px;
+}
+
+section .gap1 {
+    border: 1px dashed #7565AD;
+}
+
+section .reply.are {
+    margin: 10px 0 10px 0;
+}
+
+section .replycontentwrite, .boardReplyContent {
+    width: 750px;
+    height: 35px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #DEDEDE;
+
+    /* 내부텍스트 서식 */
+    font-family: 'KCC-Hanbit';
+    text-indent: 5px;
+}
+
+section .btn.reply, .btn.rreplay {
+    border: 0;
+    width: 60px;
+    height: 30px;
+    background-color: #A093CE;
+    cursor: pointer;
+    margin-right: 5px;
+
+     /* 내부폰트 */
+     font-family: 'Dovemayo_gothic';
+     font-size: 15px;
+}
+
+section .gap2 {
+    margin: 20px 0 20px 0;
+}
+
+section .replyread-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 40px;
+}
+
+section .replywriter {
+    font-size: 15px;
+}
+
+section .replycontent {
+    border-left: 1px black;
+    margin: 0 20px 0 20px;
+}
+
+section .btn.show.rreplycontent {
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+
+    /* 내부폰트 */
+    font-family: 'Dovemayo_gothic';
+    font-size: 10px;
+}
+
+section .rreplycontent.span {
+    margin: 10px 0 10px 0;
+}
