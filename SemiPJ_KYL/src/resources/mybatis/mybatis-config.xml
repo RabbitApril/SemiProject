@@ -9,7 +9,11 @@
 	</settings>
 	
 	<typeAliases>
-		
+		<!-- package 내 클래스명이 별칭으로 상용됨 -->
+		<package name="kh.project.board.freeboard.model.dto"/>
+		<package name="kh.project.board.noticeboard.model.dto"/>
+		<package name="kh.project.board.reviewboard.model.dto"/>
+		<package name="kh.project.member.model.dto"/>
 	</typeAliases>
 	
 	<environments default="development2">
