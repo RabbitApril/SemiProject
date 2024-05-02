@@ -23,7 +23,7 @@
 						class="d-block w-100" alt="이벤트1" height="400px">
 				</div>
 				<div class="carousel-item" data-bs-interval="2000">
-					<img src="https://picsum.photos/200/300" class="d-block w-100"
+					<img src="${pageContext.request.contextPath}/resource/img/루즈 앤 레시온_최종.png" class="d-block w-100"
 						alt="이벤트2" height="400px">
 				</div>
 				<div class="carousel-item">
