@@ -20,7 +20,7 @@
   </select>
   
   <select id="selectTotalCount" resultType="int">
-  	SELECT COUNT(*) FROM FREEBOARD;
+  	SELECT COUNT(*) FROM FREEBOARD
   </select>
   
   <select id="selectPageList" resultType="FreeBoardListDto" parameterType="map">

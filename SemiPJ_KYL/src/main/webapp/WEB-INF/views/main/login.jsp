@@ -55,7 +55,17 @@
 			</form>
 		</div>
 	</div>
-
+	
+		<!-- 	쿠키값으로 id정보 받아오기 -->
+	<%String cookie = "";
+		Cookie[] cookies = request.getCookies(); // 쿠키생성
+		if (cookies != null && cookies.length > 0)
+			for (int i = 0; i < cookies.length; i++) {
+				if (cookies[i].getName().equals("memId")) { // 쿠키명 찾아서 값 저장
+					cookie = cookies[i].getValue();
+				}
+			}%>
+			
 	<script>
 		$(loadedHandler);
 		function loadedHandler() {
@@ -80,21 +90,21 @@
 		}
 
 		function frmClickHandler() {
-			$
-					.ajax({
-						url : "${pageContext.request.contextPath }/login",
+			let preUrl = "${param.url }";
+			preUrl = (preUrl) ? "?url="+preUrl : "";
+			$.ajax({
+						url : "${pageContext.request.contextPath }/login" + preUrl,
 						method : "post",
 						data : $("#frm-login").serialize(),
 						success : function(result) {
 							console.log(result);
 							if (result == 1) {
-								var prePage = "${prePage}";
-								if (prePage == "write") {
-									location.href = "${pageContext.request.contextPath }/community/write";
+								if (preUrl) {
+									location.href = "${param.url }";
 								}
 								location.href = "${pageContext.request.contextPath }/main";
 							} else {
-								alert("아이디 또는 패스워드가 일치하지 않습니다. 다시 확인하고 로그인해주세요.");
+								alert("아이디 또는 패스워드가 일치하지 않습니다. \n다시 확인하고 로그인해주세요.");
 								$("[name=pwd]").val("");
 							}
 						},

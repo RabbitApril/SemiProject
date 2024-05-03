@@ -73,13 +73,16 @@ public class NoticeBoardWriteController extends HttpServlet {
 					
 			NoticeBoardFileWriteDto filedto = new NoticeBoardFileWriteDto(fileName, orginFileName);
 			fileList.add(filedto);
+			System.out.println("여기여기 파일 저장 후");
 		}
+		System.out.println(fileList);
 				
 		String subject = multiReq.getParameter("subject");
 		String content = multiReq.getParameter("editor");
 		MemberInfoDto memberInfoDto = (MemberInfoDto)request.getSession().getAttribute("aceptLogin");
 		NoticeBoardInsertDto dto = new NoticeBoardInsertDto(subject, content, memberInfoDto.getMemId(), fileList);
-				
+		System.out.println("review write: param:");
+		System.out.println(dto);
 		int result = service.insert(dto);
 		response.sendRedirect(request.getContextPath()+"/notice/list");
 	}		

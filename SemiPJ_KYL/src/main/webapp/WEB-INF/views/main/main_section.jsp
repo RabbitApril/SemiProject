@@ -45,12 +45,12 @@
 	</div>
 	<div class="mainmenu">
 		<div class="notice article">
-			<a href="Noticeboard.html">공지사항</a>
+			<a href="${pageContext.request.contextPath}/notice/list">공지사항</a>
 			<hr>
 			(목록 들어가는 곳)
 		</div>
 		<div class="resent review">
-			<a href="Reviewboard.html">최근 리뷰</a>
+			<a href="${pageContext.request.contextPath}/review/list">최근 리뷰</a>
 			<hr>
 			(목록 들어가는 곳)
 		</div>

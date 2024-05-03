@@ -23,7 +23,7 @@
                 <div class="sitemove">
                     <div class="decobtn">
                         <div role=”button” class="btn findid">
-                            <img src="${pageContext.request.contextPath}/resource/img/아이디 찾기.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
+                            <img src="${pageContext.request.contextPath}/resource/img/아이디찾기.png" alt="아이디찾기" class="findidImg" width="90px" height="90px">
                             <br>아이디찾기
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                 </div>    
                 <div class="mainbtn">
                     <button type="button" class="backtomain" style="cursor: pointer;"> 
-                        <img src="/IMG/뒤로가기아이콘.png" alt="화살표" class="back" width="30px" height="30px">메인으로 돌아가기 
+                        <img src="${pageContext.request.contextPath}/resource/img/뒤로가기아이콘.png" alt="화살표" class="back" width="30px" height="30px">메인으로 돌아가기 
                     </button>
                 </div>
             </div>
@@ -49,7 +49,8 @@ $(loadedHandler)
 function loadedHandler() {
 	$(".btn.findid").on("click", btnfindidClickHandler);
 	$(".btn.findpassword").on("click", btnfindpasswordClickHandler);
-}
+	$(".backtomain").on("click", btnbacktomain);
+}	
 
 function btnfindidClickHandler() {
 	location.href="${pageContext.request.contextPath}/findid";
@@ -57,6 +58,10 @@ function btnfindidClickHandler() {
 
 function btnfindpasswordClickHandler() {
 	location.href="${pageContext.request.contextPath}/findpassword";
+}
+
+function btnbacktomain() {
+	location.href="${pageContext.request.contextPath}/main";
 }
 </script>
 </html>

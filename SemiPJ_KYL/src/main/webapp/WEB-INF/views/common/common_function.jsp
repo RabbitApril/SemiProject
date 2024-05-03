@@ -27,8 +27,8 @@ function ajaxErrorHandler (request, status, error){
 			+ "error: " + error);
 }
 
-<!-- 	login check -->
-
+//login check
+/*  
 String check = request.getParameter("check");
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
@@ -44,4 +44,5 @@ if(id.equals("test")&&pw.equals("1234")){
 	}
 }
 response.sendRedirect("exam3_login.jsp");
+ */ 
 </script>

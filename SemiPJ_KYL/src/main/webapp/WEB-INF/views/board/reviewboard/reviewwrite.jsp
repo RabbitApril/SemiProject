@@ -34,6 +34,7 @@
 							required>
 					</div>
 					<div id="editor" style="display: none;"></div>
+					<input type="hidden" name="editor">
 					<div class="btnfilearea">
 						<button type="button" class="btn file">첨부파일</button>
 					</div>
@@ -52,7 +53,7 @@ function loadedHandler() {
 	$(".btn.write").on("click", btnWriteClickHandler);
 }
 
-let editor;
+let newEditor;
 
 // CKEditor5 코드
 ClassicEditor
@@ -61,22 +62,15 @@ ClassicEditor
 // 			uploadUrl: 'http://localhost:8080/admin/test/imageUpload'
 		}
   })
-  
-  .then( newEditor => {
-        editor = newEditor;
-    } )
-
 	.then( editor => {
-	window.editor = editor;
-
+	newEditor = editor;
 	} )
-
   .catch( error => {
       console.error( error );
   } );
   
 function btnFileClickHandler() {
-	var htmlVal = `<div class="after button"><input type="file" class="btn select-file" required><button type="button" class="btn file-cancle">취소</button></div>`;
+	var htmlVal = `<div class="after button"><input type="file" class="btn select-file" name="uploadfile" required><button type="button" class="btn file-cancle">취소</button></div>`;
 	$(this).parent().after(htmlVal);
 	
 	// 중복 등록 방지
@@ -98,6 +92,9 @@ function btnWriteClickHandler() {
 		   alert("제목을 작성해주세요.");
 		   return;
 	    }
+	console.log("입력한내용: ");
+	console.log(newEditor.getData());
+	$("[name=editor]").val(newEditor.getData());
 	
 	var frm = document.getElementById("frm-noticewrite");
 	frm.method="post";  

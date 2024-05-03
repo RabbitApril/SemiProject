@@ -25,7 +25,7 @@
   <select id="selectPageList" resultType="NoticeBoardListDto" parameterType="map">
   	SELECT NOTICE_ID, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_TIME, ADM_ID 
   	FROM (SELECT T1.*, ROWNUM RN
-  			FROM (SELECT NOTICE_ID, NOTICE_TITLE, NOTICE_TIME, ADM_ID 
+  			FROM (SELECT NOTICE_ID, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_TIME, ADM_ID 
   			FROM NOTICEBOARD ORDER BY NOTICE_ID DESC) T1)
   			WHERE RN BETWEEN #{startRownum} AND #{endRownum} 
   </select>
@@ -47,11 +47,11 @@
   <insert id="insert" parameterType="NoticeBoardInsertDto">
   	INSERT ALL 
 	INTO NOTICEBOARD (NOTICE_ID, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_TIME, ADM_ID) 
-	VALUES (SEQ_NOTICEBOARD_ID.NEXTVAL, #{noticeTitle}, #{noticeContent}, default, #{admId})
+	VALUES (SEQ_NOTICEBOARD_ID.NEXTVAL, #{noticeTitle}, #{noticeContent}, systimestamp, #{admId})
 	<if test="fileList != null">
 		<foreach collection="fileList" item="filedto" index="idx" separator=" ">
 		INTO NOTICE_FILE (NOTICE_ID, BOARD_FILE_ID, SAVED_FILE_PATH_NAME, ORIGINAL_FILENAME) 
-		VALUES (SEQ_NOTICEBOARD_ID.NEXTVAL, #{idx}, #{filedto.filePath}, #{filedto.orginalFileName}) 
+		VALUES (SEQ_NOTICEBOARD_ID.NEXTVAL, #{idx}, #{filedto.savedFilePathName}, #{filedto.originalFilename}) 
 		</foreach>
 		</if>
 		SELECT * FROM DUAL

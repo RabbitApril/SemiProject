@@ -20,7 +20,7 @@
   </select>
   
   <select id="selectTotalCount" resultType="int">
-  	SELECT COUNT(*) FROM REVIEWBOARD;
+  	SELECT COUNT(*) FROM REVIEWBOARD
   </select>
   
   <select id="selectPageList" resultType="ReviewBoardListDto" parameterType="map">

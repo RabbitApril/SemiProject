@@ -17,7 +17,7 @@
 	<div class="findpwdWrap">
 		<div class="findpwd-inner">
 			<div class="findpwd title">
-				<img src = "대충이미지넣기" alt = "비밀번호찾기 이미지"><br>
+				<img src = "${pageContext.request.contextPath}/resource/img/비밀번호 찾기.png" alt = "비밀번호찾기 이미지" width="100px" height="100px"><br>
 				비밀번호 찾기
 			</div>
 	        <form id="frm-findId">

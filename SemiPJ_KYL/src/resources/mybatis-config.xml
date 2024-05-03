@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
-	<properties resource="db.properties"/>
-
+	<properties resource = "db.properties" />
+	
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL" />
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
-
+	
 	<typeAliases>
 		<!-- package 내 클래스명이 별칭으로 상용됨 -->
-		<package name="kh.mclass.semim.board.model.dto"/>
-		<package name="kh.mclass.semim.member.model.dto"/>
+		<package name="kh.project.board.freeboard.model.dto"/>
+		<package name="kh.project.board.noticeboard.model.dto"/>
+		<package name="kh.project.board.reviewboard.model.dto"/>
+		<package name="kh.project.member.model.dto"/>
 	</typeAliases>
-
-	<environments default="semimDbServer">
-		<environment id="semimLocalhost">
+	
+	<environments default="development2">
+		<environment id="development1">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="${jdbc.driver}" />
@@ -24,7 +26,7 @@
 				<property name="password" value="${jdbc.semi.password}" />
 			</dataSource>
 		</environment>
-		<environment id="semimDbServer">
+		<environment id="development2">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="${jdbc.driver}" />
@@ -33,7 +35,7 @@
 				<property name="password" value="${jdbc.semi.password}" />
 			</dataSource>
 		</environment>
-		<environment id="scottLocalhost">
+		<environment id="development3">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="${jdbc.driver}" />
@@ -43,24 +45,12 @@
 			</dataSource>
 		</environment>
 	</environments>
-
+	
 	<mappers>
-		<mapper resource="mappers/board-mapper.xml"/>
-		<mapper resource="mappers/member-mapper.xml"/>
-		<!-- xxx-mapper.xml 생성 후 추가 -->
+<!-- 		xxx.mapper.xml 생성 시 추가 -->
+	<mapper resource="mappers/member-mapper.xml"/>
+	<mapper resource="mappers/noticeboard-mapper.xml"/>
+	<mapper resource="mappers/reviewboard-mapper.xml"/>
+	<mapper resource="mappers/freeboard-mapper.xml"/>
 	</mappers>
 </configuration>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

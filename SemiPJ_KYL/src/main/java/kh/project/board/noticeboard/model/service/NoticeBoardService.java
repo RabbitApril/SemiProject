@@ -43,11 +43,11 @@ public class NoticeBoardService {
 		int endPageNum = (startPageNum + pageBlockSize > totalPageCount) ? totalPageCount
 				: startPageNum + pageBlockSize - 1;
 
-		List<NoticeBoardListDto> dtolist = dao.selectPageList(session, start, end);
+		List<NoticeBoardListDto> noticeboardList = dao.selectPageList(session, start, end);
 		session.close();
 
 		result = new HashMap<String, Object>();
-		result.put("dtolist", dtolist);
+		result.put("dtolist", noticeboardList);
 		result.put("totalPageCount", totalPageCount);
 		result.put("startPageNum", startPageNum);
 		result.put("endPageNum", endPageNum);
