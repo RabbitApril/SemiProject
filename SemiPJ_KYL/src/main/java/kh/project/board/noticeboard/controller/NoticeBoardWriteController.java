@@ -81,7 +81,7 @@ public class NoticeBoardWriteController extends HttpServlet {
 		String content = multiReq.getParameter("editor");
 		MemberInfoDto memberInfoDto = (MemberInfoDto)request.getSession().getAttribute("aceptLogin");
 		NoticeBoardInsertDto dto = new NoticeBoardInsertDto(subject, content, memberInfoDto.getMemId(), fileList);
-		System.out.println("review write: param:");
+		System.out.println("notice write: param:");
 		System.out.println(dto);
 		int result = service.insert(dto);
 		response.sendRedirect(request.getContextPath()+"/notice/list");

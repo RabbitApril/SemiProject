@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글쓰기::리뷰</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <jsp:include page="/WEB-INF/views/common/common_function.jsp" />
 
@@ -25,10 +25,10 @@
 		</div>
 		<div class="wrap-main">
 			<section>
-				<div class="title1">공지사항 작성</div>
+				<div class="title1">리뷰 작성</div>
 				<hr class="line1">
 				<hr class="gap1">
-				<form id="frm-noticewrite">
+				<form id="frm-reviewwrite">
 					<div class="titlewrite">
 						<input type="text" name="subject" placeholder="제목을 입력해 주세요."
 							required>
@@ -36,7 +36,7 @@
 					<div id="editor" style="display: none;"></div>
 					<input type="hidden" name="editor">
 					<div class="btnfilearea">
-						<button type="button" class="btn file">첨부파일</button>
+						<button type="button" class="btn file">파일추가</button>
 					</div>
 					<div class="submit area">
 						<button type="button" class="btn write">글쓰기</button>
@@ -96,9 +96,9 @@ function btnWriteClickHandler() {
 	console.log(newEditor.getData());
 	$("[name=editor]").val(newEditor.getData());
 	
-	var frm = document.getElementById("frm-noticewrite");
+	var frm = document.getElementById("frm-reviewwrite");
 	frm.method="post";  
-	frm.action = "${pageContext.request.contextPath}/notice/write";
+	frm.action = "${pageContext.request.contextPath}/review/write";
 	frm.enctype="multipart/form-data"; //form 태그 내부에 input type="file" 이 있다면
 	frm.submit();	
 }
